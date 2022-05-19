@@ -1,4 +1,5 @@
 import 'package:om_chauhan/all_imports.dart';
+import 'package:om_chauhan/view/home/skills/skills.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -7,8 +8,7 @@ class Home extends StatelessWidget {
     final _homeKey = new GlobalKey();
     final _aboutKey = new GlobalKey();
     final _projectKey = new GlobalKey();
-
-    // final _whatIDoKey = new GlobalKey();
+    final _skillsKey = new GlobalKey();
     ScrollController _scroll = ScrollController();
     return Scaffold(
       backgroundColor: kGreyShade,
@@ -16,19 +16,6 @@ class Home extends StatelessWidget {
         controller: _scroll,
         child: Column(
           children: [
-            // RadioListTile<ThemeMode>(
-            //   title: const Text('Light Mode'),
-            //   groupValue: themeChanger.getTheme,
-            //   value: ThemeMode.light,
-            //   onChanged: themeChanger.setTheme,
-            // ),
-            // RadioListTile<ThemeMode>(
-            //   title: const Text('Dark Mode'),
-            //   groupValue: themeChanger.getTheme,
-            //   value: ThemeMode.dark,
-            //   onChanged: themeChanger.setTheme,
-            // ),
-
             TopMenu(
               key: _homeKey,
               home: () {
@@ -49,12 +36,17 @@ class Home extends StatelessWidget {
                   duration: Duration(seconds: 1),
                 );
               },
-              whatido: () {},
-              skills: () {},
+              skills: () {
+                Scrollable.ensureVisible(
+                  _skillsKey.currentState!.context,
+                  duration: Duration(seconds: 1),
+                );
+              },
             ),
             HeroCta(),
             About(key: _aboutKey),
             Project(key: _projectKey),
+            Skills(key: _skillsKey),
             Footer(
               clikToTop: () {
                 Scrollable.ensureVisible(

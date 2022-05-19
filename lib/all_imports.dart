@@ -19,3 +19,5 @@ export 'package:blobs/blobs.dart';
 export 'package:om_chauhan/model/project_model.dart';
 export 'package:flutter_svg/flutter_svg.dart';
 export 'package:om_chauhan/utils/strings.dart';
+export 'package:om_chauhan/controller/skills_controller.dart';
+export 'package:om_chauhan/model/skills_model.dart';

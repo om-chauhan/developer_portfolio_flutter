@@ -20,10 +20,8 @@ class TopMenu extends StatefulWidget {
 }
 
 class _TopMenuState extends State<TopMenu> {
-  bool _changeTheme = false;
   @override
   Widget build(BuildContext context) {
-    final themeChanger = Provider.of<ThemeChanger>(context);
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width,
@@ -46,7 +44,7 @@ class _TopMenuState extends State<TopMenu> {
             ),
           ),
           Expanded(
-            flex: 4,
+            flex: 2,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -58,34 +56,14 @@ class _TopMenuState extends State<TopMenu> {
                   title: 'Projects',
                   onTap: widget.project,
                 ),
-                TopMenuItem(
-                  title: 'What i Do',
-                  onTap: widget.whatido,
-                ),
+                // TopMenuItem(
+                //   title: 'What i Do',
+                //   onTap: widget.whatido,
+                // ),
                 TopMenuItem(
                   title: 'Skills',
                   onTap: widget.skills,
                 ),
-                // Expanded(
-                //   child: RadioListTile<ThemeMode>(
-                //     title: const Text('Light Mode'),
-                //     groupValue: themeChanger.getTheme,
-                //     value: ThemeMode.light,
-                //     onChanged: themeChanger.setTheme,
-                //   ),
-                // ),
-                // CupertinoSwitch(
-                //   value: _changeTheme,
-                //   activeColor: Colors.green,
-                //   onChanged: (value) {
-                //     themeChanger.setTheme;
-                //     setState(() {
-                //       _changeTheme = value;
-                //     });
-                //   },
-                //   thumbColor: kBlack,
-                //   trackColor: kWhite,
-                // ),
               ],
             ),
           )
