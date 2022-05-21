@@ -16,9 +16,10 @@ class _ProjectState extends State<Project> {
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width,
-      // height: 600,
       alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(horizontal: 120, vertical: 50),
+      padding: EdgeInsets.symmetric(
+          horizontal: Responsive.isDesktop(context) ? 120 : 20,
+          vertical: Responsive.isDesktop(context) ? 50 : 20),
       color: kBlackShade,
       child: Column(
         children: [
@@ -30,60 +31,29 @@ class _ProjectState extends State<Project> {
           ),
           const SizedBox(height: 30.0),
           GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              childAspectRatio: 2.5 / 1.7,
-              mainAxisSpacing: 35,
-              crossAxisSpacing: 30,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: Responsive.isDesktop(context)
+                  ? 3
+                  : Responsive.isTablet(context)
+                      ? 2
+                      : 1,
+              childAspectRatio: Responsive.isDesktop(context)
+                  ? 2.5 / 1.7
+                  : Responsive.isTablet(context)
+                      ? 1 / 0.5
+                      : 1 / 0.55,
+              mainAxisSpacing: Responsive.isDesktop(context) ? 35 : 20,
+              crossAxisSpacing: Responsive.isDesktop(context) ? 30 : 20,
             ),
             itemCount: project.projectList.length,
             shrinkWrap: true,
             physics: ScrollPhysics(),
             itemBuilder: (BuildContext context, int i) {
-              return Card(
-                color: kGreyShade,
-                margin: EdgeInsets.zero,
-                elevation: 1,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5)),
-                child: Padding(
-                  padding: const EdgeInsets.all(25.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      TextBuilder(
-                        text: project.projectList[i].title,
-                        color: kWhite,
-                      ),
-                      const SizedBox(height: 30.0),
-                      TextBuilder(
-                        text: project.projectList[i].description,
-                        color: kWhite,
-                        height: 1.5,
-                      ),
-                      Spacer(),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CustomButton(
-                            title: 'Webiste',
-                            width: 130,
-                            height: 38,
-                            icon: FontAwesomeIcons.link,
-                            onTap: () {},
-                          ),
-                          CustomButton(
-                            title: 'GitHub',
-                            width: 130,
-                            height: 38,
-                            icon: FontAwesomeIcons.github,
-                            onTap: () {},
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                ),
+              return ProjectCard(
+                title: project.projectList[i].title,
+                description: project.projectList[i].description,
+                website: project.projectList[i].website,
+                github: project.projectList[i].gitHub,
               );
             },
           ),

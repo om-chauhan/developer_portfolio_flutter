@@ -31,4 +31,28 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+      <queries>
+  <intent>
+    <action android:name="android.intent.action.VIEW" />
+    <data android:scheme="https" />
+  </intent>
+  <!-- If your app makes calls -->
+  <intent>
+    <action android:name="android.intent.action.DIAL" />
+    <data android:scheme="tel" />
+  </intent>
+  <!-- If your sends SMS messages -->
+  <intent>
+    <action android:name="android.intent.action.SENDTO" />
+    <data android:scheme="smsto" />
+  </intent>
+  <!-- If your app sends emails -->
+  <intent>
+    <action android:name="android.intent.action.SEND" />
+    <data android:mimeType="*/*" />
+  </intent>
+</queries>
+    <queries>
+        <provider android:authorities="com.facebook.katana.provider.PlatformProvider" />
+    </queries>
 </manifest>

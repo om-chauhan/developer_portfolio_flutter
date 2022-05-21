@@ -15,69 +15,140 @@ class _AboutState extends State<About> {
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width,
-      height: 450,
+      height: Responsive.isDesktop(context) ? 450 : null,
       alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(horizontal: 120),
+      padding: EdgeInsets.symmetric(
+          horizontal: Responsive.isDesktop(context) ? 120 : 20),
       color: kGreyShade,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Expanded(
-            flex: 6,
-            child: Container(
-              alignment: Alignment.centerLeft,
-              padding: EdgeInsets.all(20),
-              child: SvgPicture.asset(
-                'assets/icons/coding.svg',
-                height: 200,
-                width: 200,
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 4,
-            child: Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TextBuilder(
-                    text: "About Me",
-                    color: kWhite,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20,
+      child: Responsive.isDesktop(context)
+          ? Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  flex: 6,
+                  child: Container(
+                    alignment: Alignment.centerLeft,
+                    padding: EdgeInsets.all(20),
+                    child: SvgPicture.asset(
+                      'assets/icons/coding.svg',
+                      height: 200,
+                      width: 200,
+                    ),
                   ),
-                  const SizedBox(height: 10.0),
-                  TextBuilder(
-                    text: about,
-                    color: kWhite,
-                    fontWeight: FontWeight.w400,
-                    height: 1.5,
-                    fontSize: 14,
+                ),
+                Expanded(
+                  flex: 4,
+                  child: Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        TextBuilder(
+                          text: "About Me",
+                          color: kWhite,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20,
+                        ),
+                        const SizedBox(height: 10.0),
+                        TextBuilder(
+                          text: about,
+                          color: kWhite,
+                          fontWeight: FontWeight.w400,
+                          height: 1.5,
+                          fontSize: 14,
+                        ),
+                        const SizedBox(height: 50.0),
+                        Row(
+                          children: [
+                            CustomButton(
+                              title: 'Linkedin',
+                              icon: FontAwesomeIcons.linkedin,
+                              onTap: () {
+                                print('Linkedin Button Clicked');
+                                UrlLaunch.launchInBrowser(url: linkedin);
+                              },
+                            ),
+                            const SizedBox(width: 50.0),
+                            CustomButton(
+                              title: 'Resume',
+                              icon: FontAwesomeIcons.download,
+                              onTap: () {
+                                print('Resume Button Clicked');
+
+                                UrlLaunch.launchInBrowser(url: github);
+                              },
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
-                  const SizedBox(height: 50.0),
-                  Row(
+                ),
+              ],
+            )
+          : Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  alignment: Alignment.centerLeft,
+                  padding: EdgeInsets.all(20),
+                  child: SvgPicture.asset(
+                    'assets/icons/coding.svg',
+                    height: 200,
+                    width: 200,
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomButton(
-                        title: 'Linkedin',
-                        icon: FontAwesomeIcons.linkedin,
-                        onTap: () {},
+                      TextBuilder(
+                        text: "About Me",
+                        color: kWhite,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
                       ),
-                      const SizedBox(width: 50.0),
-                      CustomButton(
-                        title: 'Resume',
-                        icon: FontAwesomeIcons.download,
-                        onTap: () {},
+                      const SizedBox(height: 10.0),
+                      TextBuilder(
+                        text: about,
+                        color: kWhite,
+                        fontWeight: FontWeight.w400,
+                        height: 1.5,
+                        fontSize: 14,
                       ),
+                      const SizedBox(height: 50.0),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CustomButton(
+                            title: 'Linkedin',
+                            icon: FontAwesomeIcons.linkedin,
+                            onTap: () {
+                              print('Linkedin Button Clicked');
+
+                              UrlLaunch.launchInBrowser(url: linkedin);
+                            },
+                          ),
+                          const SizedBox(width: 50.0),
+                          CustomButton(
+                            title: 'Resume',
+                            icon: FontAwesomeIcons.download,
+                            onTap: () {
+                              print('Resume Button Clicked');
+
+                              UrlLaunch.launchInBrowser(url: github);
+                            },
+                          ),
+                        ],
+                      )
                     ],
-                  )
-                ],
-              ),
+                  ),
+                ),
+                const SizedBox(height: 20.0),
+              ],
             ),
-          ),
-        ],
-      ),
     );
   }
 }

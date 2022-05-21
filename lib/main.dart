@@ -1,5 +1,4 @@
 import 'package:om_chauhan/all_imports.dart';
-import 'package:url_strategy/url_strategy.dart';
 
 void main() {
   setPathUrlStrategy();

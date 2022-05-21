@@ -26,13 +26,14 @@ class _TopMenuState extends State<TopMenu> {
     return Container(
       width: size.width,
       height: 90,
-      padding: EdgeInsets.symmetric(horizontal: 120),
+      padding: EdgeInsets.symmetric(
+          horizontal: Responsive.isDesktop(context) ? 120 : 20),
       color: kGreyShade,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-            flex: 6,
+            flex: 7,
             child: GestureDetector(
               onTap: widget.home,
               child: TextBuilder(
@@ -44,7 +45,7 @@ class _TopMenuState extends State<TopMenu> {
             ),
           ),
           Expanded(
-            flex: 2,
+            flex: 3,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -56,10 +57,6 @@ class _TopMenuState extends State<TopMenu> {
                   title: 'Projects',
                   onTap: widget.project,
                 ),
-                // TopMenuItem(
-                //   title: 'What i Do',
-                //   onTap: widget.whatido,
-                // ),
                 TopMenuItem(
                   title: 'Skills',
                   onTap: widget.skills,

@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:om_chauhan/utils/colors.dart';
-import 'package:om_chauhan/widgets/textbuilder.dart';
+import 'package:om_chauhan/all_imports.dart';
 
 class CustomButton extends StatelessWidget {
   final String? title;
