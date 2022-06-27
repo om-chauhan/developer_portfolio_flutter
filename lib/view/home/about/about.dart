@@ -48,7 +48,7 @@ class _AboutState extends State<About> {
                           text: "About Me",
                           color: kWhite,
                           fontWeight: FontWeight.w500,
-                          fontSize: 20,
+                          fontSize: 30,
                         ),
                         const SizedBox(height: 10.0),
                         TextBuilder(
@@ -108,7 +108,7 @@ class _AboutState extends State<About> {
                         text: "About Me",
                         color: kWhite,
                         fontWeight: FontWeight.w500,
-                        fontSize: 20,
+                        fontSize: 30,
                       ),
                       const SizedBox(height: 10.0),
                       TextBuilder(

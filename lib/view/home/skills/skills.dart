@@ -27,7 +27,7 @@ class _SkillsState extends State<Skills> {
             text: 'Skills',
             color: kWhite,
             fontWeight: FontWeight.w500,
-            fontSize: 20,
+            fontSize: 30,
           ),
           const SizedBox(height: 30.0),
           SizedBox(

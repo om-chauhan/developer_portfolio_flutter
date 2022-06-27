@@ -27,7 +27,7 @@ class _ProjectState extends State<Project> {
             text: 'Project',
             color: kWhite,
             fontWeight: FontWeight.w500,
-            fontSize: 20,
+            fontSize: 30,
           ),
           const SizedBox(height: 30.0),
           GridView.builder(
@@ -38,7 +38,7 @@ class _ProjectState extends State<Project> {
                       ? 2
                       : 1,
               childAspectRatio: Responsive.isDesktop(context)
-                  ? 2.5 / 1.7
+                  ? 2.5 / 1.6
                   : Responsive.isTablet(context)
                       ? 1 / 0.5
                       : 1 / 0.55,

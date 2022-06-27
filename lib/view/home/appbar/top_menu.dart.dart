@@ -36,16 +36,27 @@ class _TopMenuState extends State<TopMenu> {
             flex: 7,
             child: GestureDetector(
               onTap: widget.home,
-              child: TextBuilder(
-                text: 'Portfolio',
-                fontSize: 22,
-                textAlign: TextAlign.left,
-                color: kWhite,
+              child: Row(
+                children: [
+                  Image.asset(
+                    'assets/icons/logo.png',
+                    height: 40,
+                    width: 40,
+                  ),
+                  const SizedBox(width: 10.0),
+                  TextBuilder(
+                    text: 'Om Portfolio',
+                    fontSize: 26,
+                    textAlign: TextAlign.left,
+                    fontWeight: FontWeight.w600,
+                    color: kWhite,
+                  ),
+                ],
               ),
             ),
           ),
           Expanded(
-            flex: 3,
+            flex: 2,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

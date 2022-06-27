@@ -17,7 +17,7 @@ class ProjectCard extends StatelessWidget {
       color: kGreyShade,
       margin: EdgeInsets.zero,
       elevation: 1,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Padding(
         padding: EdgeInsets.all(Responsive.isDesktop(context) ? 25.0 : 15),
         child: Container(
@@ -30,6 +30,8 @@ class ProjectCard extends StatelessWidget {
               TextBuilder(
                 text: title,
                 color: kWhite,
+                fontSize: 22,
+                fontWeight: FontWeight.w600,
               ),
               const SizedBox(height: 30.0),
               TextBuilder(
@@ -39,6 +41,7 @@ class ProjectCard extends StatelessWidget {
                 maxLines: 3,
                 textOverflow: TextOverflow.ellipsis,
               ),
+              // Expanded(child: SizedBox()),
               Spacer(),
               Container(
                 // color: Colors.green,
