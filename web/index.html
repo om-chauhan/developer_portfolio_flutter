@@ -23,8 +23,55 @@
       name="google-site-verification"
       content="oY4NT0QxHyWnaARedSZYEvGW8Og0Iwa5xXmGO40NuFA"
     />
+      <style>
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .loader {
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 2px solid grey;
+      border-right: 2px solid white;
+      border-bottom: 2px solid grey;
+      border-left: 2px solid white;
+      width: 100px;
+      height: 100px;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
   </head>
   <body>
+
+     <div class="loading">
+    <div class="loader"></div>
     <script>
       var serviceWorkerVersion = null;
       var scriptLoaded = false;
@@ -89,5 +136,14 @@
         loadMainDartJs();
       }
     </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6NLN8HY0VC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6NLN8HY0VC');
+</script>
   </body>
 </html>

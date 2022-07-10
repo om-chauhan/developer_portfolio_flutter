@@ -54,9 +54,6 @@ class _ProjectState extends State<Project> {
                 description: project.projectList[i].description,
                 website: project.projectList[i].website,
                 github: project.projectList[i].gitHub,
-                color: project.projectList[i].top == true
-                    ? kGreyShade
-                    : kGreyShade.withOpacity(0.6),
                 top: project.projectList[i].top,
               );
             },
