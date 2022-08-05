@@ -6,7 +6,7 @@ class ProjectController {
         title: 'Flutter Codebase',
         description:
             "Flutter Codebase is a Web App which is help to store all the useful website, Tutorials and Example of Code to achieve better code.",
-        website: 'https://flutter-codebase.netlify.app/',
+        website: 'https://codes.om-chauhan.co.in/',
         gitHub: '',
         top: true),
     ProjectModel(
