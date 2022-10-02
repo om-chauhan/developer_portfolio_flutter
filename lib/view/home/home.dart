@@ -18,7 +18,7 @@ class Home extends StatelessWidget {
       drawer: Responsive.isDesktop(context)
           ? Container()
           : MobileDrawer(
-              about: _aboutKey, project: _projectKey, skils: _skillsKey),
+              about: _aboutKey, project: _projectKey, skills: _skillsKey),
       body: SafeArea(
         child: SingleChildScrollView(
           controller: _scroll,
@@ -58,7 +58,7 @@ class Home extends StatelessWidget {
               Project(key: _projectKey),
               Skills(key: _skillsKey),
               Footer(
-                clikToTop: () {
+                clickToTop: () {
                   if (Responsive.isDesktop(context)) {
                     Scrollable.ensureVisible(
                       _homeKey.currentState!.context,

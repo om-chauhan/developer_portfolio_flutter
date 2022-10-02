@@ -3,12 +3,20 @@ import 'package:om_chauhan/all_imports.dart';
 class ProjectController {
   final projectList = [
     ProjectModel(
+        title: 'Mera Desh',
+        description:
+            "Mera Desh - Made in INDIA.🇮🇳\n\nWe all do not know about INDIA or about our country that's why this app is made. This app for all the student who is preparing for any civil service (government job) exams, as well as civilians peoples and tourist to acquire more knowledge about INDIA and their history, culture and so on.",
+        website:
+            'https://play.google.com/store/apps/details?id=com.adbytee.mera_desh',
+        gitHub: '',
+        top: true),
+    ProjectModel(
         title: 'Flutter Codebase',
         description:
             "Flutter Codebase is a Web App which is help to store all the useful website, Tutorials and Example of Code to achieve better code.",
         website: 'https://codes.om-chauhan.co.in/',
         gitHub: '',
-        top: true),
+        top: false),
     ProjectModel(
         title: 'Flutter Snippets',
         description:
@@ -50,8 +58,8 @@ class ProjectController {
             'https://github.com/om-chauhan/Invoice-Management-System-Flutter-UI',
         top: false),
     ProjectModel(
-        title: 'Ecommerce App',
-        description: "Ecommerce App - fetch data from Rest API.",
+        title: 'E-Commerce App',
+        description: "E-Commerce App - fetch data from Rest API.",
         website:
             'https://github.com/om-chauhan/Super-Store-Ecommerce-App-using-REST-Api-in-Flutter',
         gitHub:
@@ -60,7 +68,7 @@ class ProjectController {
     ProjectModel(
         title: 'Simple Calculator',
         description:
-            "A simple Calculator Appliction by using Dart Language and Flutter Framework. which is support both Ios and Android.",
+            "A simple Calculator Applications by using Dart Language and Flutter Framework. which is support both Ios and Android.",
         website: 'https://github.com/om-chauhan/Simple-Calculator-Flutter',
         gitHub: 'https://github.com/om-chauhan/Simple-Calculator-Flutter',
         top: false),

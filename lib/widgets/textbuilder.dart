@@ -32,7 +32,7 @@ class TextBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text!,
-      style: GoogleFonts.roboto(
+      style: GoogleFonts.lato(
         fontSize: fontSize,
         color: color,
         fontWeight: fontWeight,
@@ -42,7 +42,6 @@ class TextBuilder extends StatelessWidget {
         decoration: textDecoration,
       ),
       maxLines: maxLines,
-
       overflow: textOverflow,
       textAlign: textAlign,
       softWrap: true,

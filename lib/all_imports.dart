@@ -13,7 +13,6 @@ export 'package:om_chauhan/widgets/app_bar_item.dart';
 export 'package:om_chauhan/widgets/textbuilder.dart';
 export 'package:font_awesome_flutter/font_awesome_flutter.dart';
 export 'package:om_chauhan/controller/project_controller.dart';
-
 export 'package:om_chauhan/widgets/custom_button.dart';
 export 'package:blobs/blobs.dart';
 export 'package:om_chauhan/model/project_model.dart';
@@ -23,7 +22,6 @@ export 'package:om_chauhan/controller/skills_controller.dart';
 export 'package:om_chauhan/model/skills_model.dart';
 export 'package:url_strategy/url_strategy.dart';
 export 'package:om_chauhan/utils/url_launch.dart';
-export 'package:sizer/sizer.dart';
 export 'package:flutter/material.dart';
 export 'package:om_chauhan/utils/colors.dart';
 export 'package:om_chauhan/widgets/textbuilder.dart';

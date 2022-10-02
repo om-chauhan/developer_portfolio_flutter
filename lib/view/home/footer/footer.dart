@@ -1,10 +1,10 @@
 import 'package:om_chauhan/all_imports.dart';
 
 class Footer extends StatefulWidget {
-  final void Function()? clikToTop;
+  final void Function()? clickToTop;
   const Footer({
     Key? key,
-    this.clikToTop,
+    this.clickToTop,
   }) : super(key: key);
 
   @override
@@ -64,7 +64,7 @@ class _FooterState extends State<Footer> {
             ],
           ),
           InkWell(
-            onTap: widget.clikToTop,
+            onTap: widget.clickToTop,
             child: Container(
               height: 50,
               width: 50,

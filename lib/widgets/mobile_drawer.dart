@@ -1,12 +1,12 @@
 import 'package:om_chauhan/all_imports.dart';
 
 class MobileDrawer extends StatelessWidget {
-  final GlobalKey? about, project, skils;
+  final GlobalKey? about, project, skills;
   const MobileDrawer({
     Key? key,
     this.about,
     this.project,
-    this.skils,
+    this.skills,
   }) : super(key: key);
 
   @override
@@ -46,7 +46,7 @@ class MobileDrawer extends StatelessWidget {
           ListTile(
             onTap: () {
               Scrollable.ensureVisible(
-                skils!.currentState!.context,
+                skills!.currentState!.context,
                 duration: Duration(seconds: 1),
               );
             },

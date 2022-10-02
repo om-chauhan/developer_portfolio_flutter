@@ -1,16 +1,13 @@
 import 'package:om_chauhan/all_imports.dart';
+import 'dart:developer' as dev;
 
 class ProjectCard extends StatelessWidget {
-  final String? title, description, website, github;
-
+  final ProjectModel? project;
   final bool? top;
   const ProjectCard({
     Key? key,
-    this.title,
-    this.description,
-    this.website,
-    this.github,
     this.top,
+    this.project,
   }) : super(key: key);
 
   @override
@@ -20,18 +17,21 @@ class ProjectCard extends StatelessWidget {
       child: Stack(
         children: [
           Container(
+            width: 500,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                    color: top == true ? Colors.white : Colors.greenAccent,
-                    offset: Offset(2, 2)),
+                  color: top == true ? Colors.white : Colors.greenAccent,
+                  offset: Offset(2, 2),
+                ),
               ],
             ),
             child: Card(
               color: top == true ? kGreyShade.withOpacity(0.8) : Colors.black,
               margin: EdgeInsets.zero,
-              elevation: 1,
+              shadowColor: Colors.blue,
+              elevation: 5,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -39,55 +39,58 @@ class ProjectCard extends StatelessWidget {
                 padding:
                     EdgeInsets.all(Responsive.isDesktop(context) ? 25.0 : 15),
                 child: SizedBox(
-                  width: double.infinity,
-                  height: double.infinity,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextBuilder(
-                        text: title,
+                        text: project!.title,
                         color: kWhite,
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
                       ),
                       const SizedBox(height: 30.0),
                       TextBuilder(
-                        text: description,
+                        text: project!.description,
                         color: kWhite,
                         height: 1.5,
-                        maxLines: 3,
+                        maxLines: 5,
                         textOverflow: TextOverflow.ellipsis,
                       ),
-                      Spacer(),
-                      Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
+                      const SizedBox(height: 30.0),
+                      Row(
+                        mainAxisAlignment: project!.website.isNotEmpty
+                            ? MainAxisAlignment.spaceBetween
+                            : MainAxisAlignment.start,
+                        children: [
+                          if (project!.website.isNotEmpty)
                             CustomButton(
-                              title: 'Webiste',
+                              title: 'Website',
                               width: 120,
                               height: 38,
                               icon: FontAwesomeIcons.link,
                               onTap: () {
-                                print('Webiste Button Clicked');
-                                UrlLaunch.launchInBrowser(url: website!);
+                                dev.log(
+                                    'Website :${project!.website.toString()}');
+                                UrlLaunch.launchInBrowser(
+                                    url: project!.website);
                               },
                             ),
+                          if (project!.website.isNotEmpty)
                             const SizedBox(width: 20.0),
+                          if (project!.gitHub.isNotEmpty)
                             CustomButton(
                               title: 'GitHub',
                               width: 120,
                               height: 38,
                               icon: FontAwesomeIcons.github,
                               onTap: () {
-                                print('GitHub Button Clicked');
-
-                                UrlLaunch.launchInBrowser(url: github!);
+                                dev.log(
+                                    'Github: ${project!.gitHub.toString()}');
+                                UrlLaunch.launchInBrowser(url: project!.gitHub);
                               },
                             ),
-                          ],
-                        ),
+                        ],
                       )
                     ],
                   ),

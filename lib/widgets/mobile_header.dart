@@ -26,7 +26,10 @@ class MobileHeader extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(2),
                 ),
-                child: Icon(Icons.menu),
+                child: Icon(
+                  Icons.menu,
+                  color: kBlack,
+                ),
               ),
             ),
             const SizedBox(width: 20.0),
