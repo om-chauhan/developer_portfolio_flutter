@@ -55,6 +55,16 @@ class MobileDrawer extends StatelessWidget {
               fontSize: 20,
             ),
           ),
+          const SizedBox(height: 10.0),
+          ListTile(
+            onTap: () {
+              UrlLaunch.launchInBrowser(url: 'https://blog.om-chauhan.co.in/');
+            },
+            title: TopMenuItem(
+              title: 'Blog',
+              fontSize: 20,
+            ),
+          ),
         ],
       ),
     );

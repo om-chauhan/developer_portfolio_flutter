@@ -1,4 +1,5 @@
 import 'package:om_chauhan/all_imports.dart';
+import 'dart:developer' as dev;
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -17,8 +18,7 @@ class Home extends StatelessWidget {
       backgroundColor: kGreyShade,
       drawer: Responsive.isDesktop(context)
           ? Container()
-          : MobileDrawer(
-              about: _aboutKey, project: _projectKey, skills: _skillsKey),
+          : MobileDrawer(about: _aboutKey, project: _projectKey, skills: _skillsKey),
       body: SafeArea(
         child: SingleChildScrollView(
           controller: _scroll,
@@ -50,6 +50,10 @@ class Home extends StatelessWidget {
                           _skillsKey.currentState!.context,
                           duration: Duration(seconds: 1),
                         );
+                      },
+                      blog: () {
+                        dev.log('Launch Blog Website');
+                        UrlLaunch.launchInBrowser(url: 'https://blog.om-chauhan.co.in/');
                       },
                     )
                   : MobileHeader(drawerKey: _drawerKey),

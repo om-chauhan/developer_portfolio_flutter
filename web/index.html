@@ -1,29 +1,33 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <base href="$FLUTTER_BASE_HREF" />
+	<head>
+		<base href="$FLUTTER_BASE_HREF" />
 
-    <meta charset="UTF-8" />
-    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
-    <meta name="description" content="A Flutter Developer Portfolio Website" />
+		<meta charset="UTF-8" />
+		<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+		<meta name="description" content="A Flutter Developer Portfolio Website" />
 
-    <!-- iOS meta tags & icons -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-title" content="Om Chauhan" />
-    <link rel="apple-touch-icon" href="icons/Icon-192.png" />
+		<!-- iOS meta tags & icons -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-mobile-web-app-title" content="Om Chauhan" />
+		<link rel="apple-touch-icon" href="icons/Icon-192.png" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png" />
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="favicon.png" />
 
-    <title>Om Chauhan</title>
-    <link rel="manifest" href="manifest.json" />
-    <meta name="msvalidate.01" content="1A2E1D1901E02800FFC969F75F41CFDD" />
-    <meta
-      name="google-site-verification"
-      content="oY4NT0QxHyWnaARedSZYEvGW8Og0Iwa5xXmGO40NuFA"
-    />
-      <style>
+		<title>Om Chauhan</title>
+		<link rel="manifest" href="manifest.json" />
+		<meta name="msvalidate.01" content="1A2E1D1901E02800FFC969F75F41CFDD" />
+		<meta
+			name="google-site-verification"
+			content="oY4NT0QxHyWnaARedSZYEvGW8Og0Iwa5xXmGO40NuFA"
+		/>
+
+		<!-- Loading Spinner CSS-->
+		  <style>
     .loading {
       display: flex;
       justify-content: center;
@@ -35,20 +39,20 @@
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
     }
-
+    
     .loader {
       border: 16px solid #f3f3f3;
       border-radius: 50%;
-      border-top: 2px solid grey;
-      border-right: 2px solid white;
-      border-bottom: 2px solid grey;
-      border-left: 2px solid white;
-      width: 100px;
-      height: 100px;
+      border-top: 16px solid blue;
+      border-right: 16px solid green;
+      border-bottom: 16px solid red;
+      border-left: 16px solid pink;
+      width: 120px;
+      height: 120px;
       -webkit-animation: spin 2s linear infinite;
       animation: spin 2s linear infinite;
     }
-
+    
     @-webkit-keyframes spin {
       0% {
         -webkit-transform: rotate(0deg);
@@ -57,7 +61,7 @@
         -webkit-transform: rotate(360deg);
       }
     }
-
+    
     @keyframes spin {
       0% {
         transform: rotate(0deg);
@@ -67,83 +71,91 @@
       }
     }
   </style>
-  </head>
-  <body>
-
-     <div class="loading">
+		<!-- Loading Spinner CSS-->
+	</head>
+	<body>
+		<!-- Loading Spinner-->
+		<div class="loading">
     <div class="loader"></div>
-    <script>
-      var serviceWorkerVersion = null;
-      var scriptLoaded = false;
-      function loadMainDartJs() {
-        if (scriptLoaded) {
-          return;
-        }
-        scriptLoaded = true;
-        var scriptTag = document.createElement("script");
-        scriptTag.src = "main.dart.js";
-        scriptTag.type = "application/javascript";
-        document.body.append(scriptTag);
-      }
+  </div>
+		<!-- Loading Spinner-->
+		<script>
+			var serviceWorkerVersion = null;
+			var scriptLoaded = false;
+			function loadMainDartJs() {
+				if (scriptLoaded) {
+					return;
+				}
+				scriptLoaded = true;
+				var scriptTag = document.createElement('script');
+				scriptTag.src = 'main.dart.js';
+				scriptTag.type = 'application/javascript';
+				document.body.append(scriptTag);
+			}
 
-      if ("serviceWorker" in navigator) {
-        // Service workers are supported. Use them.
-        window.addEventListener("load", function () {
-          // Wait for registration to finish before dropping the <script> tag.
-          // Otherwise, the browser will load the script multiple times,
-          // potentially different versions.
-          var serviceWorkerUrl =
-            "flutter_service_worker.js?v=" + serviceWorkerVersion;
-          navigator.serviceWorker.register(serviceWorkerUrl).then((reg) => {
-            function waitForActivation(serviceWorker) {
-              serviceWorker.addEventListener("statechange", () => {
-                if (serviceWorker.state == "activated") {
-                  console.log("Installed new service worker.");
-                  loadMainDartJs();
-                }
-              });
-            }
-            if (!reg.active && (reg.installing || reg.waiting)) {
-              // No active web worker and we have installed or are installing
-              // one for the first time. Simply wait for it to activate.
-              waitForActivation(reg.installing || reg.waiting);
-            } else if (!reg.active.scriptURL.endsWith(serviceWorkerVersion)) {
-              // When the app updates the serviceWorkerVersion changes, so we
-              // need to ask the service worker to update.
-              console.log("New service worker available.");
-              reg.update();
-              waitForActivation(reg.installing);
-            } else {
-              // Existing service worker is still good.
-              console.log("Loading app from service worker.");
-              loadMainDartJs();
-            }
-          });
+			if ('serviceWorker' in navigator) {
+				// Service workers are supported. Use them.
+				window.addEventListener('load', function () {
+					// Wait for registration to finish before dropping the <script> tag.
+					// Otherwise, the browser will load the script multiple times,
+					// potentially different versions.
+					var serviceWorkerUrl =
+						'flutter_service_worker.js?v=' + serviceWorkerVersion;
+					navigator.serviceWorker.register(serviceWorkerUrl).then((reg) => {
+						function waitForActivation(serviceWorker) {
+							serviceWorker.addEventListener('statechange', () => {
+								if (serviceWorker.state == 'activated') {
+									console.log('Installed new service worker.');
+									loadMainDartJs();
+								}
+							});
+						}
+						if (!reg.active && (reg.installing || reg.waiting)) {
+							// No active web worker and we have installed or are installing
+							// one for the first time. Simply wait for it to activate.
+							waitForActivation(reg.installing || reg.waiting);
+						} else if (!reg.active.scriptURL.endsWith(serviceWorkerVersion)) {
+							// When the app updates the serviceWorkerVersion changes, so we
+							// need to ask the service worker to update.
+							console.log('New service worker available.');
+							reg.update();
+							waitForActivation(reg.installing);
+						} else {
+							// Existing service worker is still good.
+							console.log('Loading app from service worker.');
+							loadMainDartJs();
+						}
+					});
 
-          // If service worker doesn't succeed in a reasonable amount of time,
-          // fallback to plaint <script> tag.
-          setTimeout(() => {
-            if (!scriptLoaded) {
-              console.warn(
-                "Failed to load app from service worker. Falling back to plain <script> tag."
-              );
-              loadMainDartJs();
-            }
-          }, 4000);
-        });
-      } else {
-        // Service workers not supported. Just drop the <script> tag.
-        loadMainDartJs();
-      }
-    </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6NLN8HY0VC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+					// If service worker doesn't succeed in a reasonable amount of time,
+					// fallback to plaint <script> tag.
+					setTimeout(() => {
+						if (!scriptLoaded) {
+							console.warn(
+								'Failed to load app from service worker. Falling back to plain <script> tag.'
+							);
+							loadMainDartJs();
+						}
+					}, 4000);
+				});
+			} else {
+				// Service workers not supported. Just drop the <script> tag.
+				loadMainDartJs();
+			}
+		</script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-6NLN8HY0VC"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
 
-  gtag('config', 'G-6NLN8HY0VC');
-</script>
-  </body>
+			gtag('config', 'G-6NLN8HY0VC');
+		</script>
+	</body>
 </html>

@@ -16,29 +16,31 @@ class TopMenuItem extends StatefulWidget {
 }
 
 class _TopMenuItemState extends State<TopMenuItem> {
-  bool _isHover = false;
-
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (enter) {
-        setState(() {
-          _isHover = true;
-        });
-      },
-      onExit: (exit) {
-        setState(() {
-          _isHover = false;
-        });
-      },
-      child: GestureDetector(
-        onTap: widget.onTap,
-        child: TextBuilder(
-          text: widget.title,
-          textAlign: TextAlign.center,
-          fontSize: _isHover ? 16 : widget.fontSize,
-          fontWeight: _isHover ? FontWeight.w400 : FontWeight.w300,
-          color: kWhite,
+    return GestureDetector(
+      onTap: widget.onTap,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 14),
+          decoration: BoxDecoration(
+            color: kGreyShade,
+            borderRadius: BorderRadius.circular(8),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.white54,
+                offset: Offset(1, 1),
+              ),
+            ],
+          ),
+          child: TextBuilder(
+            text: widget.title,
+            textAlign: TextAlign.center,
+            fontSize: 16,
+            fontWeight: FontWeight.w400,
+            color: kWhite,
+          ),
         ),
       ),
     );
