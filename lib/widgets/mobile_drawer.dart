@@ -21,10 +21,10 @@ class MobileDrawer extends StatelessWidget {
             onTap: () {
               Scrollable.ensureVisible(
                 about!.currentState!.context,
-                duration: Duration(seconds: 1),
+                duration: const Duration(seconds: 1),
               );
             },
-            title: TopMenuItem(
+            title: const TopMenuItem(
               title: 'About Me',
               fontSize: 20,
             ),
@@ -34,10 +34,10 @@ class MobileDrawer extends StatelessWidget {
             onTap: () {
               Scrollable.ensureVisible(
                 project!.currentState!.context,
-                duration: Duration(seconds: 1),
+                duration: const Duration(seconds: 1),
               );
             },
-            title: TopMenuItem(
+            title: const TopMenuItem(
               title: 'Projects',
               fontSize: 20,
             ),
@@ -47,10 +47,10 @@ class MobileDrawer extends StatelessWidget {
             onTap: () {
               Scrollable.ensureVisible(
                 skills!.currentState!.context,
-                duration: Duration(seconds: 1),
+                duration: const Duration(seconds: 1),
               );
             },
-            title: TopMenuItem(
+            title: const TopMenuItem(
               title: 'Skills',
               fontSize: 20,
             ),
@@ -60,7 +60,7 @@ class MobileDrawer extends StatelessWidget {
             onTap: () {
               UrlLaunch.launchInBrowser(url: 'https://blog.om-chauhan.co.in/');
             },
-            title: TopMenuItem(
+            title: const TopMenuItem(
               title: 'Blog',
               fontSize: 20,
             ),

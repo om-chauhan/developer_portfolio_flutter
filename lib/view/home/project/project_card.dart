@@ -13,7 +13,7 @@ class ProjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(right: 2, bottom: 2),
+      padding: const EdgeInsets.only(right: 2, bottom: 2),
       child: Stack(
         children: [
           Container(
@@ -23,7 +23,7 @@ class ProjectCard extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: top == true ? Colors.white : Colors.greenAccent,
-                  offset: Offset(2, 2),
+                  offset: const Offset(2, 2),
                 ),
               ],
             ),
@@ -36,8 +36,7 @@ class ProjectCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Padding(
-                padding:
-                    EdgeInsets.all(Responsive.isDesktop(context) ? 25.0 : 15),
+                padding: EdgeInsets.all(Responsive.isDesktop(context) ? 25.0 : 15),
                 child: SizedBox(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,9 +58,8 @@ class ProjectCard extends StatelessWidget {
                       ),
                       const SizedBox(height: 30.0),
                       Row(
-                        mainAxisAlignment: project!.website.isNotEmpty
-                            ? MainAxisAlignment.spaceBetween
-                            : MainAxisAlignment.start,
+                        mainAxisAlignment:
+                            project!.website.isNotEmpty ? MainAxisAlignment.spaceBetween : MainAxisAlignment.start,
                         children: [
                           if (project!.website.isNotEmpty)
                             CustomButton(
@@ -70,14 +68,11 @@ class ProjectCard extends StatelessWidget {
                               height: 38,
                               icon: FontAwesomeIcons.link,
                               onTap: () {
-                                dev.log(
-                                    'Website :${project!.website.toString()}');
-                                UrlLaunch.launchInBrowser(
-                                    url: project!.website);
+                                dev.log('Website :${project!.website.toString()}');
+                                UrlLaunch.launchInBrowser(url: project!.website);
                               },
                             ),
-                          if (project!.website.isNotEmpty)
-                            const SizedBox(width: 20.0),
+                          if (project!.website.isNotEmpty) const SizedBox(width: 20.0),
                           if (project!.gitHub.isNotEmpty)
                             CustomButton(
                               title: 'GitHub',
@@ -85,8 +80,7 @@ class ProjectCard extends StatelessWidget {
                               height: 38,
                               icon: FontAwesomeIcons.github,
                               onTap: () {
-                                dev.log(
-                                    'Github: ${project!.gitHub.toString()}');
+                                dev.log('Github: ${project!.gitHub.toString()}');
                                 UrlLaunch.launchInBrowser(url: project!.gitHub);
                               },
                             ),
@@ -102,14 +96,13 @@ class ProjectCard extends StatelessWidget {
             right: 5,
             top: 10,
             child: RotationTransition(
-              turns: AlwaysStoppedAnimation(40 / 360),
+              turns: const AlwaysStoppedAnimation(40 / 360),
               alignment: Alignment.center,
               child: Container(
                 height: 50,
                 width: 50,
-                decoration: BoxDecoration(
-                    color: top == true ? Colors.green : Colors.transparent,
-                    shape: BoxShape.circle),
+                decoration:
+                    BoxDecoration(color: top == true ? Colors.green : Colors.transparent, shape: BoxShape.circle),
                 child: Center(
                   child: TextBuilder(
                     text: top == true ? 'Top' : '',

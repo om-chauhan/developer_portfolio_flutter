@@ -17,8 +17,7 @@ class _HeroCtaState extends State<HeroCta> {
       width: size.width,
       height: Responsive.isDesktop(context) ? 450 : null,
       alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(
-          horizontal: Responsive.isDesktop(context) ? 120 : 20),
+      padding: EdgeInsets.symmetric(horizontal: Responsive.isDesktop(context) ? 120 : 20),
       color: kBlackShade,
       child: Responsive.isDesktop(context)
           ? Row(
@@ -27,74 +26,6 @@ class _HeroCtaState extends State<HeroCta> {
               children: [
                 Expanded(
                   flex: 4,
-                  child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        TextBuilder(
-                          text: "Hello, I'm",
-                          color: kWhite,
-                          fontSize: 14,
-                        ),
-                        const SizedBox(height: 5.0),
-                        TextBuilder(
-                          text: name,
-                          color: kWhite,
-                          fontSize: 30,
-                          textAlign: TextAlign.left,
-                          fontWeight: FontWeight.w800,
-                          latterSpacing: 1.5,
-                        ),
-                        const SizedBox(height: 5.0),
-                        TextBuilder(
-                          text: role,
-                          color: kWhite,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w600,
-                          latterSpacing: 1.5,
-                        ),
-                        const SizedBox(height: 20.0),
-                        CustomButton(
-                          title: 'WhatsApp',
-                          icon: FontAwesomeIcons.whatsapp,
-                          onTap: () {
-                            print('WhatsApp Button Clicked');
-
-                            UrlLaunch.launchInBrowser(url: whatsApp);
-                          },
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 6,
-                  child: Container(
-                    alignment: Alignment.centerRight,
-                    padding: EdgeInsets.all(20),
-                    child: Blob.fromID(
-                      id: ['20-9-80'],
-                      size: 400,
-                      styles: BlobStyles(
-                        color: kWhite,
-                        fillType: BlobFillType.fill,
-                      ),
-                      child: SvgPicture.asset(
-                        'assets/icons/programming.svg',
-                        height: 200,
-                        width: 200,
-                      ),
-                    ),
-                  ),
-                )
-              ],
-            )
-          : Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 20.0),
-                Container(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -126,7 +57,9 @@ class _HeroCtaState extends State<HeroCta> {
                         title: 'WhatsApp',
                         icon: FontAwesomeIcons.whatsapp,
                         onTap: () {
-                          print('WhatsApp Button Clicked');
+                          if (kDebugMode) {
+                            print('WhatsApp Button Clicked');
+                          }
 
                           UrlLaunch.launchInBrowser(url: whatsApp);
                         },
@@ -134,11 +67,77 @@ class _HeroCtaState extends State<HeroCta> {
                     ],
                   ),
                 ),
+                Expanded(
+                  flex: 6,
+                  child: Container(
+                    alignment: Alignment.centerRight,
+                    padding: const EdgeInsets.all(20),
+                    child: Blob.fromID(
+                      id: const ['20-9-80'],
+                      size: 400,
+                      styles: BlobStyles(
+                        color: kWhite,
+                        fillType: BlobFillType.fill,
+                      ),
+                      child: SvgPicture.asset(
+                        'assets/icons/programming.svg',
+                        height: 200,
+                        width: 200,
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            )
+          : Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 20.0),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextBuilder(
+                      text: "Hello, I'm",
+                      color: kWhite,
+                      fontSize: 14,
+                    ),
+                    const SizedBox(height: 5.0),
+                    TextBuilder(
+                      text: name,
+                      color: kWhite,
+                      fontSize: 30,
+                      textAlign: TextAlign.left,
+                      fontWeight: FontWeight.w800,
+                      latterSpacing: 1.5,
+                    ),
+                    const SizedBox(height: 5.0),
+                    TextBuilder(
+                      text: role,
+                      color: kWhite,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                      latterSpacing: 1.5,
+                    ),
+                    const SizedBox(height: 20.0),
+                    CustomButton(
+                      title: 'WhatsApp',
+                      icon: FontAwesomeIcons.whatsapp,
+                      onTap: () {
+                        if (kDebugMode) {
+                          print('WhatsApp Button Clicked');
+                        }
+
+                        UrlLaunch.launchInBrowser(url: whatsApp);
+                      },
+                    )
+                  ],
+                ),
                 Container(
                   alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   child: Blob.fromID(
-                    id: ['20-9-80'],
+                    id: const ['20-9-80'],
                     size: Responsive.isTablet(context) ? 400 : 300,
                     styles: BlobStyles(
                       color: kWhite,

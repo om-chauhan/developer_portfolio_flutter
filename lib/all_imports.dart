@@ -31,3 +31,5 @@ export 'package:om_chauhan/widgets/mobile_drawer.dart';
 export 'package:om_chauhan/widgets/mobile_header.dart';
 export 'package:om_chauhan/view/home/project/project_card.dart';
 export 'package:om_chauhan/view/home/skills/skill_card.dart';
+export 'package:flutter/foundation.dart';
+export 'package:url_launcher/url_launcher.dart';

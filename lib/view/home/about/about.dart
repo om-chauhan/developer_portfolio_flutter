@@ -17,8 +17,7 @@ class _AboutState extends State<About> {
       width: size.width,
       height: Responsive.isDesktop(context) ? 450 : null,
       alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(
-          horizontal: Responsive.isDesktop(context) ? 120 : 20),
+      padding: EdgeInsets.symmetric(horizontal: Responsive.isDesktop(context) ? 120 : 20),
       color: kGreyShade,
       child: Responsive.isDesktop(context)
           ? Row(
@@ -29,7 +28,7 @@ class _AboutState extends State<About> {
                   flex: 6,
                   child: Container(
                     alignment: Alignment.centerLeft,
-                    padding: EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(20),
                     child: SvgPicture.asset(
                       'assets/icons/coding.svg',
                       height: 200,
@@ -39,67 +38,6 @@ class _AboutState extends State<About> {
                 ),
                 Expanded(
                   flex: 4,
-                  child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        TextBuilder(
-                          text: "About Me",
-                          color: kWhite,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 30,
-                        ),
-                        const SizedBox(height: 10.0),
-                        TextBuilder(
-                          text: about,
-                          color: kWhite,
-                          fontWeight: FontWeight.w400,
-                          height: 1.5,
-                          fontSize: 14,
-                        ),
-                        const SizedBox(height: 50.0),
-                        Row(
-                          children: [
-                            CustomButton(
-                              title: 'Linkedin',
-                              icon: FontAwesomeIcons.linkedin,
-                              onTap: () {
-                                print('Linkedin Button Clicked');
-                                UrlLaunch.launchInBrowser(url: linkedin);
-                              },
-                            ),
-                            const SizedBox(width: 50.0),
-                            CustomButton(
-                              title: 'Resume',
-                              icon: FontAwesomeIcons.download,
-                              onTap: () {
-                                print('Resume Button Clicked');
-
-                                UrlLaunch.launchInBrowser(url: github);
-                              },
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            )
-          : Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.all(20),
-                  child: SvgPicture.asset(
-                    'assets/icons/coding.svg',
-                    height: 200,
-                    width: 200,
-                  ),
-                ),
-                Container(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,14 +58,14 @@ class _AboutState extends State<About> {
                       ),
                       const SizedBox(height: 50.0),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           CustomButton(
                             title: 'Linkedin',
                             icon: FontAwesomeIcons.linkedin,
                             onTap: () {
-                              print('Linkedin Button Clicked');
-
+                              if (kDebugMode) {
+                                print('Linkedin Button Clicked');
+                              }
                               UrlLaunch.launchInBrowser(url: linkedin);
                             },
                           ),
@@ -136,7 +74,9 @@ class _AboutState extends State<About> {
                             title: 'Resume',
                             icon: FontAwesomeIcons.download,
                             onTap: () {
-                              print('Resume Button Clicked');
+                              if (kDebugMode) {
+                                print('Resume Button Clicked');
+                              }
 
                               UrlLaunch.launchInBrowser(url: github);
                             },
@@ -145,6 +85,69 @@ class _AboutState extends State<About> {
                       )
                     ],
                   ),
+                ),
+              ],
+            )
+          : Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  alignment: Alignment.centerLeft,
+                  padding: const EdgeInsets.all(20),
+                  child: SvgPicture.asset(
+                    'assets/icons/coding.svg',
+                    height: 200,
+                    width: 200,
+                  ),
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextBuilder(
+                      text: "About Me",
+                      color: kWhite,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 30,
+                    ),
+                    const SizedBox(height: 10.0),
+                    TextBuilder(
+                      text: about,
+                      color: kWhite,
+                      fontWeight: FontWeight.w400,
+                      height: 1.5,
+                      fontSize: 14,
+                    ),
+                    const SizedBox(height: 50.0),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CustomButton(
+                          title: 'Linkedin',
+                          icon: FontAwesomeIcons.linkedin,
+                          onTap: () {
+                            if (kDebugMode) {
+                              print('Linkedin Button Clicked');
+                            }
+
+                            UrlLaunch.launchInBrowser(url: linkedin);
+                          },
+                        ),
+                        const SizedBox(width: 50.0),
+                        CustomButton(
+                          title: 'Resume',
+                          icon: FontAwesomeIcons.download,
+                          onTap: () {
+                            if (kDebugMode) {
+                              print('Resume Button Clicked');
+                            }
+
+                            UrlLaunch.launchInBrowser(url: github);
+                          },
+                        ),
+                      ],
+                    )
+                  ],
                 ),
                 const SizedBox(height: 20.0),
               ],

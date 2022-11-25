@@ -11,7 +11,7 @@ class MobileHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Container(
+      child: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: 80,
         child: Row(
@@ -21,7 +21,7 @@ class MobileHeader extends StatelessWidget {
                 drawerKey!.currentState!.openDrawer();
               },
               child: Container(
-                padding: EdgeInsets.all(3),
+                padding: const EdgeInsets.all(3),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(2),

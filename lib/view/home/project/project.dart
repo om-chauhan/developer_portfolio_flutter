@@ -13,8 +13,7 @@ class _ProjectState extends State<Project> {
   final project = ProjectController();
   @override
   Widget build(BuildContext context) {
-    project.projectList
-        .sort((a, b) => b.top.toString().compareTo(a.top.toString()));
+    project.projectList.sort((a, b) => b.top.toString().compareTo(a.top.toString()));
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width,

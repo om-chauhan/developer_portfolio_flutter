@@ -1,4 +1,4 @@
-import 'package:url_launcher/url_launcher.dart';
+import 'package:om_chauhan/all_imports.dart';
 
 class UrlLaunch {
   static Future makePhoneCall({String? phoneNumber}) async {
@@ -9,8 +9,7 @@ class UrlLaunch {
     await launchUrl(launchUri);
   }
 
-  static Future makeEmail(
-      {String? email, String? subject, String? body}) async {
+  static Future makeEmail({String? email, String? subject, String? body}) async {
     final Uri params = Uri(
       scheme: 'mailto',
       path: email,
@@ -29,11 +28,13 @@ class UrlLaunch {
     if (await canLaunchUrl(_url)) {
       await launchUrl(_url,
           mode: LaunchMode.externalApplication,
-          webViewConfiguration: WebViewConfiguration(
+          webViewConfiguration: const WebViewConfiguration(
             enableJavaScript: true,
           ));
     } else {
-      print('Error ${_url.toString()}');
+      if (kDebugMode) {
+        print('Error ${_url.toString()}');
+      }
       throw 'Could not launch $_url';
     }
   }

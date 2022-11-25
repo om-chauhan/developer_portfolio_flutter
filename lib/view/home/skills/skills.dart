@@ -18,8 +18,7 @@ class _SkillsState extends State<Skills> {
       width: size.width,
       alignment: Alignment.center,
       padding: EdgeInsets.symmetric(
-          horizontal: Responsive.isDesktop(context) ? 120 : 20,
-          vertical: Responsive.isDesktop(context) ? 50 : 20),
+          horizontal: Responsive.isDesktop(context) ? 120 : 20, vertical: Responsive.isDesktop(context) ? 50 : 20),
       color: kGreyShade,
       child: Column(
         children: [
@@ -35,14 +34,13 @@ class _SkillsState extends State<Skills> {
             child: GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: Responsive.isMobile(context) ? 2 : 5,
-                childAspectRatio:
-                    Responsive.isMobile(context) ? 1 / 1 : 1 / 1.1,
+                childAspectRatio: Responsive.isMobile(context) ? 1 / 1 : 1 / 1.1,
                 mainAxisSpacing: 20,
                 crossAxisSpacing: 20,
               ),
               itemCount: skill.skills.length,
               shrinkWrap: true,
-              physics: ScrollPhysics(),
+              physics: const ScrollPhysics(),
               itemBuilder: (BuildContext context, int i) {
                 return SkillsCard(
                   icons: skill.skills[i].icons,

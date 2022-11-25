@@ -5,11 +5,11 @@ class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final _homeKey = new GlobalKey();
-    final _aboutKey = new GlobalKey();
-    final _projectKey = new GlobalKey();
-    final _skillsKey = new GlobalKey();
-    final _topKey = new GlobalKey();
+    final _homeKey = GlobalKey();
+    final _aboutKey = GlobalKey();
+    final _projectKey = GlobalKey();
+    final _skillsKey = GlobalKey();
+    final _topKey = GlobalKey();
     ScrollController _scroll = ScrollController();
 
     final GlobalKey<ScaffoldState> _drawerKey = GlobalKey<ScaffoldState>();
@@ -30,25 +30,25 @@ class Home extends StatelessWidget {
                       home: () {
                         Scrollable.ensureVisible(
                           _homeKey.currentState!.context,
-                          duration: Duration(seconds: 1),
+                          duration: const Duration(seconds: 1),
                         );
                       },
                       about: () {
                         Scrollable.ensureVisible(
                           _aboutKey.currentState!.context,
-                          duration: Duration(seconds: 1),
+                          duration: const Duration(seconds: 1),
                         );
                       },
                       project: () {
                         Scrollable.ensureVisible(
                           _projectKey.currentState!.context,
-                          duration: Duration(seconds: 1),
+                          duration: const Duration(seconds: 1),
                         );
                       },
                       skills: () {
                         Scrollable.ensureVisible(
                           _skillsKey.currentState!.context,
-                          duration: Duration(seconds: 1),
+                          duration: const Duration(seconds: 1),
                         );
                       },
                       blog: () {
@@ -66,12 +66,12 @@ class Home extends StatelessWidget {
                   if (Responsive.isDesktop(context)) {
                     Scrollable.ensureVisible(
                       _homeKey.currentState!.context,
-                      duration: Duration(seconds: 1),
+                      duration: const Duration(seconds: 1),
                     );
                   } else {
                     Scrollable.ensureVisible(
                       _topKey.currentState!.context,
-                      duration: Duration(seconds: 1),
+                      duration: const Duration(seconds: 1),
                     );
                   }
                 },

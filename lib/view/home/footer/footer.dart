@@ -20,43 +20,48 @@ class _FooterState extends State<Footer> {
       // height: 600,
       alignment: Alignment.center,
       padding: EdgeInsets.symmetric(
-          horizontal: Responsive.isDesktop(context) ? 120 : 20,
-          vertical: Responsive.isDesktop(context) ? 50 : 20),
-      color: Color(0xff5429CF),
+          horizontal: Responsive.isDesktop(context) ? 120 : 20, vertical: Responsive.isDesktop(context) ? 50 : 20),
+      color: const Color(0xff5429CF),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(height: 50, width: 50),
+          const SizedBox(height: 50, width: 50),
           Row(
             children: [
               IconButton(
                 onPressed: () {
-                  print('LinkedinIn Button Clicked');
+                  if (kDebugMode) {
+                    print('LinkedinIn Button Clicked');
+                  }
 
                   UrlLaunch.launchInBrowser(url: linkedin);
                 },
-                icon: FaIcon(
+                icon: const FaIcon(
                   FontAwesomeIcons.linkedinIn,
                   color: Colors.white,
                 ),
               ),
               IconButton(
                 onPressed: () {
-                  print('Twitter Button Clicked');
+                  if (kDebugMode) {
+                    print('Twitter Button Clicked');
+                  }
 
                   UrlLaunch.launchInBrowser(url: twitter);
                 },
-                icon: FaIcon(
+                icon: const FaIcon(
                   FontAwesomeIcons.twitter,
                   color: Colors.white,
                 ),
               ),
               IconButton(
                 onPressed: () {
-                  print('Email Button Clicked');
+                  if (kDebugMode) {
+                    print('Email Button Clicked');
+                  }
                   UrlLaunch.makeEmail(email: emailId, subject: '', body: '');
                 },
-                icon: FaIcon(
+                icon: const FaIcon(
                   FontAwesomeIcons.google,
                   color: Colors.white,
                 ),
@@ -70,9 +75,9 @@ class _FooterState extends State<Footer> {
               width: 50,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
-                color: Color(0xff4220A3),
+                color: const Color(0xff4220A3),
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.expand_less,
                 color: Colors.white,
               ),

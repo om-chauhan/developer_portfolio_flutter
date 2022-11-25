@@ -29,18 +29,18 @@ class _SkillsCardState extends State<SkillsCard> {
         });
       },
       child: Card(
-        color: Color(0xff121214),
+        color: const Color(0xff121214),
         margin: EdgeInsets.zero,
         clipBehavior: Clip.antiAlias,
         elevation: 1,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         child: AnimatedContainer(
-          duration: Duration(milliseconds: 500),
-          padding: EdgeInsets.all(8),
+          duration: const Duration(milliseconds: 500),
+          padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
             border: Border(
               bottom: BorderSide(
-                color: _current ? Color(0xff5429CF) : Colors.transparent,
+                color: _current ? const Color(0xff5429CF) : Colors.transparent,
                 style: BorderStyle.solid,
                 width: 5,
               ),
