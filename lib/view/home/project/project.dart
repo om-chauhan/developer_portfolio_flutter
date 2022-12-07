@@ -40,6 +40,14 @@ class _ProjectState extends State<Project> {
             children: List.generate(
               project.projectList.length,
               (i) => ProjectCard(
+                onTap: () {
+                  if (Responsive.isMobile(context)) {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => ProjectDetails(data: project.projectList[i])));
+                  } else {
+                    showDetails(context: context, child: ProjectDetails(data: project.projectList[i]));
+                  }
+                },
                 project: project.projectList[i],
                 top: project.projectList[i].top,
               ),

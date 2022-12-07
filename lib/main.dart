@@ -1,9 +1,14 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:flutter/gestures.dart';
 
 import 'package:om_chauhan/all_imports.dart';
 
-void main() {
+Future<void> main() async {
   setPathUrlStrategy();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     // kIsWeb
     //     ? DevicePreview(
@@ -25,6 +30,14 @@ class MyApp extends StatelessWidget {
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        dragDevices: {
+          PointerDeviceKind.mouse,
+          PointerDeviceKind.touch,
+          PointerDeviceKind.stylus,
+          PointerDeviceKind.unknown
+        },
+      ),
       title: 'Om Chauhan',
       theme: ThemeData(
         brightness: Brightness.light,
