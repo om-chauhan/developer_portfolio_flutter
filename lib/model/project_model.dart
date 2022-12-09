@@ -6,6 +6,8 @@ class ProjectModel {
   final List<String> screenshot;
   final String demo;
   final bool? top;
+  final String playStore;
+  final String miStore;
 
   ProjectModel({
     required this.title,
@@ -15,5 +17,7 @@ class ProjectModel {
     required this.screenshot,
     required this.demo,
     required this.top,
+    required this.playStore,
+    required this.miStore,
   });
 }

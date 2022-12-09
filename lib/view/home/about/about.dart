@@ -72,7 +72,6 @@ class _AboutState extends State<About> {
                           const SizedBox(width: 50.0),
                           CustomButton(
                             title: 'Resume',
-                            icon: FontAwesomeIcons.download,
                             onTap: () {
                               if (kDebugMode) {
                                 print('Resume Button Clicked');

@@ -1,5 +1,4 @@
 import 'package:om_chauhan/all_imports.dart';
-import 'dart:developer' as dev;
 
 class ProjectCard extends StatelessWidget {
   final Function() onTap;
@@ -61,35 +60,20 @@ class ProjectCard extends StatelessWidget {
                           textOverflow: TextOverflow.ellipsis,
                         ),
                         const SizedBox(height: 30.0),
-                        Row(
-                          mainAxisAlignment:
-                              project!.website.isNotEmpty ? MainAxisAlignment.spaceBetween : MainAxisAlignment.start,
-                          children: [
-                            if (project!.website.isNotEmpty)
-                              CustomButton(
-                                title: 'Website',
-                                width: 120,
-                                height: 38,
-                                icon: FontAwesomeIcons.link,
-                                onTap: () {
-                                  dev.log('Website :${project!.website.toString()}');
-                                  UrlLaunch.launchInBrowser(url: project!.website);
-                                },
-                              ),
-                            if (project!.website.isNotEmpty) const SizedBox(width: 20.0),
-                            if (project!.gitHub.isNotEmpty)
-                              CustomButton(
-                                title: 'GitHub',
-                                width: 120,
-                                height: 38,
-                                icon: FontAwesomeIcons.github,
-                                onTap: () {
-                                  dev.log('Github: ${project!.gitHub.toString()}');
-                                  UrlLaunch.launchInBrowser(url: project!.gitHub);
-                                },
-                              ),
-                          ],
-                        )
+                        CustomButton(
+                          title: 'More',
+                          width: 120,
+                          height: 38,
+                          icon: FontAwesomeIcons.link,
+                          onTap: () {
+                            if (Responsive.isMobile(context)) {
+                              Navigator.push(
+                                  context, MaterialPageRoute(builder: (_) => ProjectDetails(data: project!)));
+                            } else {
+                              showDetails(context: context, child: ProjectDetails(data: project!));
+                            }
+                          },
+                        ),
                       ],
                     ),
                   ),

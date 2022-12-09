@@ -6,21 +6,25 @@ class ProjectController {
       title: 'Number Calculator',
       description:
           "Number Calculator - EMI, GST, Percentage, Cuboid, Cube, Circular Cylinder, Circular Cone, Sphere, and Hemisphere.",
-      website: 'https://play.google.com/store/apps/details?id=com.adbytee.number_calculator',
+      website: '',
       gitHub: '',
       top: true,
       demo: 'https://youtube.com/shorts/Bv8sai46f94?feature=share',
       screenshot: Screenshots.numberCalculator,
+      miStore: 'https://global.app.mi.com/details?lo=IN&la=en_US&id=com.adbytee.number_calculator',
+      playStore: 'https://play.google.com/store/apps/details?id=com.adbytee.number_calculator',
     ),
     ProjectModel(
       title: 'Mera Desh',
       description:
           "Mera Desh - Made in INDIA 🇮🇳\n\nWe all do not know about INDIA or about our country that's why this app is made. This app for all the student who is preparing for any civil service (government job) exams, as well as civilians peoples and tourist to acquire more knowledge about INDIA and their history, culture and so on.",
-      website: 'https://play.google.com/store/apps/details?id=com.adbytee.mera_desh',
+      website: '',
       gitHub: '',
       top: true,
       demo: 'https://youtube.com/shorts/s82QAicfKQs?feature=share',
       screenshot: Screenshots.meraDesh,
+      miStore: 'https://global.app.mi.com/details?lo=IN&la=en_US&id=com.adbytee.mera_desh',
+      playStore: 'https://play.google.com/store/apps/details?id=com.adbytee.mera_desh',
     ),
     ProjectModel(
       title: 'Flutter Codebase',
@@ -31,6 +35,8 @@ class ProjectController {
       top: false,
       demo: '',
       screenshot: [],
+      miStore: '',
+      playStore: '',
     ),
     ProjectModel(
       title: 'Flutter Snippets',
@@ -41,6 +47,8 @@ class ProjectController {
       demo:
           'https://raw.githubusercontent.com/om-chauhan/flutter-snippets/fd303d1c7c0b5cf8ab69b6a7e21a4fd8bd96bcc7/flutter-snippets-demo.gif',
       screenshot: [],
+      miStore: '',
+      playStore: '',
     ),
     ProjectModel(
       title: 'Create flutter package',
@@ -50,6 +58,8 @@ class ProjectController {
       top: true,
       demo: '',
       screenshot: [],
+      miStore: '',
+      playStore: '',
     ),
     ProjectModel(
       title: 'Flat Banners',
@@ -59,6 +69,8 @@ class ProjectController {
       top: true,
       demo: '',
       screenshot: [],
+      miStore: '',
+      playStore: '',
     ),
     ProjectModel(
       title: 'Image Slider Indicator',
@@ -68,6 +80,8 @@ class ProjectController {
       top: false,
       demo: '',
       screenshot: [],
+      miStore: '',
+      playStore: '',
     ),
     ProjectModel(
       title: 'Invoice Management Application UI',
@@ -77,6 +91,8 @@ class ProjectController {
       top: false,
       demo: 'https://youtube.com/shorts/2vNgmt6-dBo?feature=share',
       screenshot: Screenshots.invoiceUI,
+      miStore: '',
+      playStore: '',
     ),
     ProjectModel(
       title: 'E-Commerce App',
@@ -86,6 +102,8 @@ class ProjectController {
       top: false,
       demo: 'https://youtube.com/shorts/anrM-biWlzo?feature=share',
       screenshot: Screenshots.superStore,
+      miStore: '',
+      playStore: '',
     ),
     ProjectModel(
       title: 'Simple Calculator',
@@ -96,6 +114,8 @@ class ProjectController {
       top: false,
       demo: '',
       screenshot: Screenshots.simpleCalculator,
+      miStore: '',
+      playStore: '',
     ),
   ];
 }

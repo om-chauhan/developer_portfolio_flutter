@@ -48,28 +48,43 @@ class ProjectDetails extends StatelessWidget {
                 fontWeight: FontWeight.w400,
               ),
               const SizedBox(height: 20.0),
-              Row(
-                mainAxisAlignment: data.website.isNotEmpty ? MainAxisAlignment.spaceBetween : MainAxisAlignment.start,
+              Wrap(
+                spacing: 10,
+                runSpacing: 10,
+                alignment: WrapAlignment.center,
+                crossAxisAlignment: WrapCrossAlignment.end,
+                runAlignment: WrapAlignment.spaceBetween,
                 children: [
-                  if (data.website.isNotEmpty)
-                    CustomButton(
-                      title: 'Website',
-                      width: 120,
-                      height: 38,
-                      icon: FontAwesomeIcons.link,
+                  if (data.playStore.isNotEmpty)
+                    ActionButton(
+                      buttonType: ButtonType.playStore,
+                      buttonShape: ButtonShape.rect,
                       onTap: () {
-                        UrlLaunch.launchInBrowser(url: data.website);
+                        UrlLaunch.launchInBrowser(url: data.playStore);
                       },
                     ),
-                  if (data.website.isNotEmpty) const SizedBox(width: 20.0),
+                  if (data.miStore.isNotEmpty)
+                    ActionButton(
+                      buttonType: ButtonType.miStore,
+                      buttonShape: ButtonShape.rect,
+                      onTap: () {
+                        UrlLaunch.launchInBrowser(url: data.miStore);
+                      },
+                    ),
                   if (data.gitHub.isNotEmpty)
-                    CustomButton(
-                      title: 'GitHub',
-                      width: 120,
-                      height: 38,
-                      icon: FontAwesomeIcons.github,
+                    ActionButton(
+                      buttonType: ButtonType.github,
+                      buttonShape: ButtonShape.circle,
                       onTap: () {
                         UrlLaunch.launchInBrowser(url: data.gitHub);
+                      },
+                    ),
+                  if (data.website.isNotEmpty)
+                    ActionButton(
+                      buttonType: ButtonType.website,
+                      buttonShape: ButtonShape.circle,
+                      onTap: () {
+                        UrlLaunch.launchInBrowser(url: data.website);
                       },
                     ),
                 ],
