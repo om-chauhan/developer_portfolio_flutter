@@ -36,8 +36,8 @@ Future<dynamic> showImagePreview({required BuildContext context, required String
                           Navigator.pop(context);
                         },
                         child: Container(
-                          height: 30,
-                          width: 30,
+                          height: 40,
+                          width: 40,
                           decoration: BoxDecoration(
                             color: kBlack,
                             shape: BoxShape.circle,
@@ -48,7 +48,7 @@ Future<dynamic> showImagePreview({required BuildContext context, required String
                           ),
                         ),
                       ),
-                      const SizedBox(width: 10.0),
+                      const SizedBox(width: 20.0),
                       TextBuilder(
                         text: 'Image Preview',
                         color: kBlack,

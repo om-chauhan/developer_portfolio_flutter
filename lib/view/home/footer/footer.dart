@@ -17,11 +17,9 @@ class _FooterState extends State<Footer> {
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width,
-      // height: 600,
       alignment: Alignment.center,
       padding: EdgeInsets.symmetric(
           horizontal: Responsive.isDesktop(context) ? 120 : 20, vertical: Responsive.isDesktop(context) ? 50 : 20),
-      color: const Color(0xff5429CF),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -38,7 +36,7 @@ class _FooterState extends State<Footer> {
                 },
                 icon: const FaIcon(
                   FontAwesomeIcons.linkedinIn,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
               IconButton(
@@ -51,7 +49,7 @@ class _FooterState extends State<Footer> {
                 },
                 icon: const FaIcon(
                   FontAwesomeIcons.twitter,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
               IconButton(
@@ -63,7 +61,7 @@ class _FooterState extends State<Footer> {
                 },
                 icon: const FaIcon(
                   FontAwesomeIcons.google,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ],

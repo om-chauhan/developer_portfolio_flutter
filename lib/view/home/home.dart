@@ -10,18 +10,16 @@ class Home extends StatelessWidget {
     final _projectKey = GlobalKey();
     final _skillsKey = GlobalKey();
     final _topKey = GlobalKey();
-    ScrollController _scroll = ScrollController();
 
     final GlobalKey<ScaffoldState> _drawerKey = GlobalKey<ScaffoldState>();
     return Scaffold(
       key: _drawerKey,
-      backgroundColor: kGreyShade,
+      backgroundColor: kWhite,
       drawer: Responsive.isDesktop(context)
-          ? Container()
+          ? const SizedBox()
           : MobileDrawer(about: _aboutKey, project: _projectKey, skills: _skillsKey),
       body: SafeArea(
         child: SingleChildScrollView(
-          controller: _scroll,
           child: Column(
             children: [
               Responsive.isDesktop(context)

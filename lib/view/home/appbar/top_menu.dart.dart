@@ -27,7 +27,6 @@ class _TopMenuState extends State<TopMenu> {
       width: size.width,
       height: 90,
       padding: EdgeInsets.symmetric(horizontal: Responsive.isDesktop(context) ? 120 : 20),
-      color: kGreyShade,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -46,7 +45,7 @@ class _TopMenuState extends State<TopMenu> {
                   fontSize: 26,
                   textAlign: TextAlign.left,
                   fontWeight: FontWeight.w600,
-                  color: kWhite,
+                  color: kBlack,
                 ),
               ],
             ),

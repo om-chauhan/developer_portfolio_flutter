@@ -18,7 +18,6 @@ class _AboutState extends State<About> {
       height: Responsive.isDesktop(context) ? 450 : null,
       alignment: Alignment.center,
       padding: EdgeInsets.symmetric(horizontal: Responsive.isDesktop(context) ? 120 : 20),
-      color: kGreyShade,
       child: Responsive.isDesktop(context)
           ? Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,43 +43,28 @@ class _AboutState extends State<About> {
                     children: [
                       TextBuilder(
                         text: "About Me",
-                        color: kWhite,
-                        fontWeight: FontWeight.w500,
+                        color: kBlack,
+                        fontWeight: FontWeight.w600,
                         fontSize: 30,
                       ),
                       const SizedBox(height: 10.0),
                       TextBuilder(
                         text: about,
-                        color: kWhite,
+                        color: kBlack,
                         fontWeight: FontWeight.w400,
                         height: 1.5,
                         fontSize: 14,
                       ),
                       const SizedBox(height: 50.0),
-                      Row(
-                        children: [
-                          CustomButton(
-                            title: 'Linkedin',
-                            icon: FontAwesomeIcons.linkedin,
-                            onTap: () {
-                              if (kDebugMode) {
-                                print('Linkedin Button Clicked');
-                              }
-                              UrlLaunch.launchInBrowser(url: linkedin);
-                            },
-                          ),
-                          const SizedBox(width: 50.0),
-                          CustomButton(
-                            title: 'Resume',
-                            onTap: () {
-                              if (kDebugMode) {
-                                print('Resume Button Clicked');
-                              }
-
-                              UrlLaunch.launchInBrowser(url: github);
-                            },
-                          ),
-                        ],
+                      CustomButton(
+                        title: 'Linkedin',
+                        icon: FontAwesomeIcons.linkedin,
+                        onTap: () {
+                          if (kDebugMode) {
+                            print('Linkedin Button Clicked');
+                          }
+                          UrlLaunch.launchInBrowser(url: linkedin);
+                        },
                       )
                     ],
                   ),
@@ -105,14 +89,14 @@ class _AboutState extends State<About> {
                   children: [
                     TextBuilder(
                       text: "About Me",
-                      color: kWhite,
+                      color: kBlack,
                       fontWeight: FontWeight.w500,
                       fontSize: 30,
                     ),
                     const SizedBox(height: 10.0),
                     TextBuilder(
                       text: about,
-                      color: kWhite,
+                      color: kBlack,
                       fontWeight: FontWeight.w400,
                       height: 1.5,
                       fontSize: 14,

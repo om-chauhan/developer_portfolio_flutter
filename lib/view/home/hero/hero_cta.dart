@@ -18,7 +18,7 @@ class _HeroCtaState extends State<HeroCta> {
       height: Responsive.isDesktop(context) ? 450 : null,
       alignment: Alignment.center,
       padding: EdgeInsets.symmetric(horizontal: Responsive.isDesktop(context) ? 120 : 20),
-      color: kBlackShade,
+      // color: kBlackShade,
       child: Responsive.isDesktop(context)
           ? Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -32,22 +32,22 @@ class _HeroCtaState extends State<HeroCta> {
                     children: [
                       TextBuilder(
                         text: "Hello, I'm",
-                        color: kWhite,
+                        color: kBlack,
                         fontSize: 14,
                       ),
                       const SizedBox(height: 5.0),
                       TextBuilder(
                         text: name,
-                        color: kWhite,
+                        color: kBlack,
                         fontSize: 30,
                         textAlign: TextAlign.left,
-                        fontWeight: FontWeight.w800,
+                        fontWeight: FontWeight.w900,
                         latterSpacing: 1.5,
                       ),
                       const SizedBox(height: 5.0),
                       TextBuilder(
                         text: role,
-                        color: kWhite,
+                        color: kBlack,
                         fontSize: 17,
                         fontWeight: FontWeight.w600,
                         latterSpacing: 1.5,
@@ -76,7 +76,7 @@ class _HeroCtaState extends State<HeroCta> {
                       id: const ['20-9-80'],
                       size: 400,
                       styles: BlobStyles(
-                        color: kWhite,
+                        color: Colors.black12,
                         fillType: BlobFillType.fill,
                       ),
                       child: SvgPicture.asset(
@@ -99,13 +99,13 @@ class _HeroCtaState extends State<HeroCta> {
                   children: [
                     TextBuilder(
                       text: "Hello, I'm",
-                      color: kWhite,
+                      color: kBlack,
                       fontSize: 14,
                     ),
                     const SizedBox(height: 5.0),
                     TextBuilder(
                       text: name,
-                      color: kWhite,
+                      color: kBlack,
                       fontSize: 30,
                       textAlign: TextAlign.left,
                       fontWeight: FontWeight.w800,
@@ -114,7 +114,7 @@ class _HeroCtaState extends State<HeroCta> {
                     const SizedBox(height: 5.0),
                     TextBuilder(
                       text: role,
-                      color: kWhite,
+                      color: kBlack,
                       fontSize: 17,
                       fontWeight: FontWeight.w600,
                       latterSpacing: 1.5,
@@ -140,7 +140,7 @@ class _HeroCtaState extends State<HeroCta> {
                     id: const ['20-9-80'],
                     size: Responsive.isTablet(context) ? 400 : 300,
                     styles: BlobStyles(
-                      color: kWhite,
+                      color: kBlack,
                       fillType: BlobFillType.fill,
                     ),
                     child: SvgPicture.asset(

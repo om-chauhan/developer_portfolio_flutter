@@ -12,7 +12,7 @@ class MobileDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: kGreyShade,
+      backgroundColor: kWhite,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -58,6 +58,7 @@ class MobileDrawer extends StatelessWidget {
           const SizedBox(height: 10.0),
           ListTile(
             onTap: () {
+              Navigator.pop(context);
               UrlLaunch.launchInBrowser(url: 'https://blog.om-chauhan.co.in/');
             },
             title: const TopMenuItem(

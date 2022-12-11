@@ -29,10 +29,10 @@ class _SkillsCardState extends State<SkillsCard> {
         });
       },
       child: Card(
-        color: const Color(0xff121214),
+        color: kWhite,
         margin: EdgeInsets.zero,
         clipBehavior: Clip.antiAlias,
-        elevation: 1,
+        elevation: 2,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 500),

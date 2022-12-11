@@ -19,13 +19,12 @@ class _SkillsState extends State<Skills> {
       alignment: Alignment.center,
       padding: EdgeInsets.symmetric(
           horizontal: Responsive.isDesktop(context) ? 120 : 20, vertical: Responsive.isDesktop(context) ? 50 : 20),
-      color: kGreyShade,
       child: Column(
         children: [
           TextBuilder(
             text: 'Skills',
-            color: kWhite,
-            fontWeight: FontWeight.w500,
+            color: kBlack,
+            fontWeight: FontWeight.w600,
             fontSize: 30,
           ),
           const SizedBox(height: 30.0),

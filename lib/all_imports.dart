@@ -7,7 +7,6 @@ export 'package:om_chauhan/view/home/hero/hero_cta.dart';
 export 'package:om_chauhan/view/home/project/project.dart';
 export 'package:flutter/material.dart';
 export 'package:om_chauhan/view/home/home.dart';
-export 'package:provider/provider.dart';
 export 'package:om_chauhan/widgets/app_bar_item.dart';
 export 'package:om_chauhan/widgets/textbuilder.dart';
 export 'package:font_awesome_flutter/font_awesome_flutter.dart';

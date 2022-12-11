@@ -25,11 +25,11 @@ class _TopMenuItemState extends State<TopMenuItem> {
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 14),
           decoration: BoxDecoration(
-            color: kGreyShade,
+            color: kWhite,
             borderRadius: BorderRadius.circular(8),
             boxShadow: const [
               BoxShadow(
-                color: Colors.white54,
+                color: Colors.black,
                 offset: Offset(1, 1),
               ),
             ],
@@ -39,7 +39,7 @@ class _TopMenuItemState extends State<TopMenuItem> {
             textAlign: TextAlign.center,
             fontSize: 16,
             fontWeight: FontWeight.w400,
-            color: kWhite,
+            color: kBlack,
           ),
         ),
       ),

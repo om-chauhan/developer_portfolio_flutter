@@ -1,7 +1,7 @@
 name: om_chauhan
 description: A Flutter Developer Portfolio Website.
 
-publish_to: "none" # Remove this line if you wish to publish to pub.dev
+publish_to: "none" 
 
 version: 1.0.0+1
 
@@ -11,26 +11,18 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
-  provider: ^6.0.2
-  google_fonts: ^2.3.1
   font_awesome_flutter: ^10.1.0
   flutter_svg: ^1.0.3
   blobs: ^2.0.0
-  shared_preferences: ^2.0.13
   url_strategy: ^0.2.0
   url_launcher: ^6.1.0
-  device_preview: ^1.1.0
   firebase_core: ^2.3.0
-  cloud_firestore: ^4.1.0
   cached_network_image: ^3.2.3
-
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^1.0.0
 
 flutter:
@@ -38,5 +30,4 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
-    - assets/screenshots/
 

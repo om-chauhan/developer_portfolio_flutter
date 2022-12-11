@@ -35,10 +35,11 @@ class MobileHeader extends StatelessWidget {
             const SizedBox(width: 20.0),
             GestureDetector(
               child: TextBuilder(
-                text: 'Portfolio',
+                text: 'Om Portfolio',
                 fontSize: 22,
                 textAlign: TextAlign.left,
-                color: kWhite,
+                fontWeight: FontWeight.w800,
+                color: kBlack,
               ),
             ),
           ],
