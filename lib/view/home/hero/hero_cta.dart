@@ -54,14 +54,10 @@ class _HeroCtaState extends State<HeroCta> {
                       ),
                       const SizedBox(height: 20.0),
                       CustomButton(
-                        title: 'WhatsApp',
-                        icon: FontAwesomeIcons.whatsapp,
+                        title: 'Email',
+                        icon: FontAwesomeIcons.envelope,
                         onTap: () {
-                          if (kDebugMode) {
-                            print('WhatsApp Button Clicked');
-                          }
-
-                          UrlLaunch.launchInBrowser(url: whatsApp);
+                          UrlLaunch.makeEmail(body: 'Hello, ', email: emailId, subject: 'Hello, I need Assistant');
                         },
                       )
                     ],
@@ -72,17 +68,11 @@ class _HeroCtaState extends State<HeroCta> {
                   child: Container(
                     alignment: Alignment.centerRight,
                     padding: const EdgeInsets.all(20),
-                    child: Blob.fromID(
-                      id: const ['20-9-80'],
-                      size: 400,
-                      styles: BlobStyles(
-                        color: Colors.black12,
-                        fillType: BlobFillType.fill,
-                      ),
-                      child: SvgPicture.asset(
-                        'assets/icons/programming.svg',
-                        height: 200,
-                        width: 200,
+                    child: const CircleAvatar(
+                      backgroundColor: Colors.black12,
+                      radius: 300,
+                      backgroundImage: AssetImage(
+                        'assets/images/my_pic.jpg',
                       ),
                     ),
                   ),
@@ -121,32 +111,22 @@ class _HeroCtaState extends State<HeroCta> {
                     ),
                     const SizedBox(height: 20.0),
                     CustomButton(
-                      title: 'WhatsApp',
-                      icon: FontAwesomeIcons.whatsapp,
+                      title: 'Email',
+                      icon: FontAwesomeIcons.envelope,
                       onTap: () {
-                        if (kDebugMode) {
-                          print('WhatsApp Button Clicked');
-                        }
-
-                        UrlLaunch.launchInBrowser(url: whatsApp);
+                        UrlLaunch.makeEmail(body: 'Hello, ', email: emailId, subject: 'Hello, I need Assistant');
                       },
                     )
                   ],
                 ),
                 Container(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.center,
                   padding: const EdgeInsets.all(20),
-                  child: Blob.fromID(
-                    id: const ['20-9-80'],
-                    size: Responsive.isTablet(context) ? 400 : 300,
-                    styles: BlobStyles(
-                      color: kBlack,
-                      fillType: BlobFillType.fill,
-                    ),
-                    child: SvgPicture.asset(
-                      'assets/icons/programming.svg',
-                      height: 200,
-                      width: 200,
+                  child: const CircleAvatar(
+                    backgroundColor: Colors.black12,
+                    radius: 150,
+                    backgroundImage: AssetImage(
+                      'assets/images/my_pic.jpg',
                     ),
                   ),
                 )

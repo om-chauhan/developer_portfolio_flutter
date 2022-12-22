@@ -1,6 +1,8 @@
 import 'package:om_chauhan/all_imports.dart';
 import 'dart:developer' as dev;
 
+import 'package:om_chauhan/widgets/custom_divider.dart';
+
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
   @override
@@ -56,9 +58,13 @@ class Home extends StatelessWidget {
                     )
                   : MobileHeader(drawerKey: _drawerKey),
               HeroCta(key: _topKey),
+              const CustomDivider(),
               About(key: _aboutKey),
+              const CustomDivider(),
               Project(key: _projectKey),
+              const CustomDivider(),
               Skills(key: _skillsKey),
+              const CustomDivider(),
               Footer(
                 clickToTop: () {
                   if (Responsive.isDesktop(context)) {

@@ -116,18 +116,18 @@ class _AboutState extends State<About> {
                             UrlLaunch.launchInBrowser(url: linkedin);
                           },
                         ),
-                        const SizedBox(width: 50.0),
-                        CustomButton(
-                          title: 'Resume',
-                          icon: FontAwesomeIcons.download,
-                          onTap: () {
-                            if (kDebugMode) {
-                              print('Resume Button Clicked');
-                            }
+                        // const SizedBox(width: 50.0),
+                        // CustomButton(
+                        //   title: 'Resume',
+                        //   icon: FontAwesomeIcons.download,
+                        //   onTap: () {
+                        //     if (kDebugMode) {
+                        //       print('Resume Button Clicked');
+                        //     }
 
-                            UrlLaunch.launchInBrowser(url: github);
-                          },
-                        ),
+                        //     UrlLaunch.launchInBrowser(url: github);
+                        //   },
+                        // ),
                       ],
                     )
                   ],
