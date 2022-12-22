@@ -1,9 +1,6 @@
 import 'package:flutter/scheduler.dart';
 import 'package:om_chauhan/all_imports.dart';
-import 'package:om_chauhan/widgets/app_banners.dart';
 import 'dart:developer' as dev;
-
-import 'package:om_chauhan/widgets/custom_divider.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -16,14 +13,23 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
-    SchedulerBinding.instance.addPostFrameCallback((_) => bannerPopUp());
+
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      var seen = sp!.getBool('isAlreadySeen');
+      if (seen == null) {
+        bannerPopUp();
+      } else {
+        await Future.delayed(const Duration(hours: 4)).then((value) => bannerPopUp());
+        await sp!.remove('isAlreadySeen');
+      }
+    });
   }
 
   bannerPopUp() {
     showDialog(
       context: context,
       useSafeArea: true,
-      barrierDismissible: true,
+      barrierDismissible: false,
       builder: (context) {
         return const AlertDialog(
           iconPadding: EdgeInsets.zero,

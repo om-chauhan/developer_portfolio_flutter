@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:om_chauhan/all_imports.dart';
 
 class AppBanners extends StatelessWidget {
@@ -72,6 +71,7 @@ class AppBanners extends StatelessWidget {
               child: InkWell(
                 onTap: () {
                   Navigator.pop(context);
+                  sp!.setBool('isAlreadySeen', true);
                 },
                 child: const SizedBox(
                   height: double.infinity,

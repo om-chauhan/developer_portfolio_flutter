@@ -19,6 +19,7 @@ dependencies:
   url_launcher: ^6.1.0
   firebase_core: ^2.3.0
   cached_network_image: ^3.2.3
+  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_test:
