@@ -68,6 +68,17 @@ class _TopMenuState extends State<TopMenu> {
               TopMenuItem(
                 title: 'Blog',
                 onTap: widget.blog,
+              ),
+              const SizedBox(width: 10.0),
+              InkWell(
+                onTap: () {
+                  UrlLaunch.launchInBrowser(url: apkDownloadLink);
+                },
+                child: const FaIcon(
+                  FontAwesomeIcons.android,
+                  size: 30,
+                  color: Color(0xff1C8302),
+                ),
               )
             ],
           )

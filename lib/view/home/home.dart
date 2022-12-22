@@ -1,10 +1,43 @@
+import 'package:flutter/scheduler.dart';
 import 'package:om_chauhan/all_imports.dart';
+import 'package:om_chauhan/widgets/app_banners.dart';
 import 'dart:developer' as dev;
 
 import 'package:om_chauhan/widgets/custom_divider.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  void initState() {
+    super.initState();
+    SchedulerBinding.instance.addPostFrameCallback((_) => bannerPopUp());
+  }
+
+  bannerPopUp() {
+    showDialog(
+      context: context,
+      useSafeArea: true,
+      barrierDismissible: true,
+      builder: (context) {
+        return const AlertDialog(
+          iconPadding: EdgeInsets.zero,
+          insetPadding: EdgeInsets.zero,
+          titlePadding: EdgeInsets.zero,
+          buttonPadding: EdgeInsets.zero,
+          actionsPadding: EdgeInsets.zero,
+          contentPadding: EdgeInsets.zero,
+          content: AppBanners(),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final _homeKey = GlobalKey();

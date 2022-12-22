@@ -15,33 +15,46 @@ class MobileHeader extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: 80,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            InkWell(
-              onTap: () {
-                drawerKey!.currentState!.openDrawer();
-              },
-              child: Container(
-                padding: const EdgeInsets.all(3),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(2),
+            Row(
+              children: [
+                InkWell(
+                  onTap: () {
+                    drawerKey!.currentState!.openDrawer();
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(3),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                    child: Icon(
+                      Icons.menu,
+                      color: kBlack,
+                    ),
+                  ),
                 ),
-                child: Icon(
-                  Icons.menu,
+                const SizedBox(width: 20.0),
+                TextBuilder(
+                  text: 'Om Portfolio',
+                  fontSize: 22,
+                  textAlign: TextAlign.left,
+                  fontWeight: FontWeight.w800,
                   color: kBlack,
                 ),
-              ),
+              ],
             ),
-            const SizedBox(width: 20.0),
-            GestureDetector(
-              child: TextBuilder(
-                text: 'Om Portfolio',
-                fontSize: 22,
-                textAlign: TextAlign.left,
-                fontWeight: FontWeight.w800,
-                color: kBlack,
+            InkWell(
+              onTap: () {
+                UrlLaunch.launchInBrowser(url: apkDownloadLink);
+              },
+              child: const FaIcon(
+                FontAwesomeIcons.android,
+                size: 30,
+                color: Color(0xff1C8302),
               ),
-            ),
+            )
           ],
         ),
       ),
