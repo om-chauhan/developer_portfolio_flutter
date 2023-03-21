@@ -24,18 +24,18 @@ class UrlLaunch {
   }
 
   static Future launchInBrowser({String? url}) async {
-    final Uri _url = Uri.parse(url!);
-    if (await canLaunchUrl(_url)) {
-      await launchUrl(_url,
+    final Uri url0 = Uri.parse(url!);
+    if (await canLaunchUrl(url0)) {
+      await launchUrl(url0,
           mode: LaunchMode.externalApplication,
           webViewConfiguration: const WebViewConfiguration(
             enableJavaScript: true,
           ));
     } else {
       if (kDebugMode) {
-        print('Error ${_url.toString()}');
+        print('Error ${url0.toString()}');
       }
-      throw 'Could not launch $_url';
+      throw 'Could not launch $url0';
     }
   }
 }

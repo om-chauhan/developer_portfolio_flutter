@@ -46,47 +46,45 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    final _homeKey = GlobalKey();
-    final _aboutKey = GlobalKey();
-    final _projectKey = GlobalKey();
-    final _skillsKey = GlobalKey();
-    final _topKey = GlobalKey();
+    final homeKey = GlobalKey();
+    final aboutKey = GlobalKey();
+    final projectKey = GlobalKey();
+    final skillsKey = GlobalKey();
+    final topKey = GlobalKey();
 
-    final GlobalKey<ScaffoldState> _drawerKey = GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> drawerKey = GlobalKey<ScaffoldState>();
     return Scaffold(
-      key: _drawerKey,
+      key: drawerKey,
       backgroundColor: kWhite,
-      drawer: Responsive.isDesktop(context)
-          ? const SizedBox()
-          : MobileDrawer(about: _aboutKey, project: _projectKey, skills: _skillsKey),
+      drawer: Responsive.isDesktop(context) ? const SizedBox() : MobileDrawer(about: aboutKey, project: projectKey, skills: skillsKey),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
               Responsive.isDesktop(context)
                   ? TopMenu(
-                      key: _homeKey,
+                      key: homeKey,
                       home: () {
                         Scrollable.ensureVisible(
-                          _homeKey.currentState!.context,
+                          homeKey.currentState!.context,
                           duration: const Duration(seconds: 1),
                         );
                       },
                       about: () {
                         Scrollable.ensureVisible(
-                          _aboutKey.currentState!.context,
+                          aboutKey.currentState!.context,
                           duration: const Duration(seconds: 1),
                         );
                       },
                       project: () {
                         Scrollable.ensureVisible(
-                          _projectKey.currentState!.context,
+                          projectKey.currentState!.context,
                           duration: const Duration(seconds: 1),
                         );
                       },
                       skills: () {
                         Scrollable.ensureVisible(
-                          _skillsKey.currentState!.context,
+                          skillsKey.currentState!.context,
                           duration: const Duration(seconds: 1),
                         );
                       },
@@ -95,25 +93,25 @@ class _HomeState extends State<Home> {
                         UrlLaunch.launchInBrowser(url: 'https://blog.om-chauhan.co.in/');
                       },
                     )
-                  : MobileHeader(drawerKey: _drawerKey),
-              HeroCta(key: _topKey),
+                  : MobileHeader(drawerKey: drawerKey),
+              HeroCta(key: topKey),
               const CustomDivider(),
-              About(key: _aboutKey),
+              About(key: aboutKey),
               const CustomDivider(),
-              Project(key: _projectKey),
+              Project(key: projectKey),
               const CustomDivider(),
-              Skills(key: _skillsKey),
+              Skills(key: skillsKey),
               const CustomDivider(),
               Footer(
                 clickToTop: () {
                   if (Responsive.isDesktop(context)) {
                     Scrollable.ensureVisible(
-                      _homeKey.currentState!.context,
+                      homeKey.currentState!.context,
                       duration: const Duration(seconds: 1),
                     );
                   } else {
                     Scrollable.ensureVisible(
-                      _topKey.currentState!.context,
+                      topKey.currentState!.context,
                       duration: const Duration(seconds: 1),
                     );
                   }
