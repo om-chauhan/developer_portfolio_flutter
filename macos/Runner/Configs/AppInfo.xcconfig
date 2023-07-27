@@ -8,7 +8,7 @@
 PRODUCT_NAME = om_chauhan
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.omChauhan
+PRODUCT_BUNDLE_IDENTIFIER = com.adbytee.omChauhan
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2022 com.example. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2022 com.adbytee. All rights reserved.

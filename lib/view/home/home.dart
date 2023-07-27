@@ -1,6 +1,4 @@
-import 'package:flutter/scheduler.dart';
 import 'package:om_chauhan/all_imports.dart';
-import 'dart:developer' as dev;
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -10,49 +8,21 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final GlobalKey<ScaffoldState> drawerKey = GlobalKey<ScaffoldState>();
+  late ProjectController project;
+  final homeKey = GlobalKey();
+  final aboutKey = GlobalKey();
+  final projectKey = GlobalKey();
+  final skillsKey = GlobalKey();
+  final topKey = GlobalKey();
   @override
   void initState() {
     super.initState();
-
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      var seen = sp!.getBool('isAlreadySeen');
-      if (seen == null) {
-        bannerPopUp();
-      } else {
-        await Future.delayed(const Duration(hours: 4)).then((value) => bannerPopUp());
-        await sp!.remove('isAlreadySeen');
-      }
-    });
-  }
-
-  bannerPopUp() {
-    showDialog(
-      context: context,
-      useSafeArea: true,
-      barrierDismissible: false,
-      builder: (context) {
-        return const AlertDialog(
-          iconPadding: EdgeInsets.zero,
-          insetPadding: EdgeInsets.zero,
-          titlePadding: EdgeInsets.zero,
-          buttonPadding: EdgeInsets.zero,
-          actionsPadding: EdgeInsets.zero,
-          contentPadding: EdgeInsets.zero,
-          content: AppBanners(),
-        );
-      },
-    );
+    project = ProjectController();
   }
 
   @override
   Widget build(BuildContext context) {
-    final homeKey = GlobalKey();
-    final aboutKey = GlobalKey();
-    final projectKey = GlobalKey();
-    final skillsKey = GlobalKey();
-    final topKey = GlobalKey();
-
-    final GlobalKey<ScaffoldState> drawerKey = GlobalKey<ScaffoldState>();
     return Scaffold(
       key: drawerKey,
       backgroundColor: kWhite,
@@ -89,8 +59,7 @@ class _HomeState extends State<Home> {
                         );
                       },
                       blog: () {
-                        dev.log('Launch Blog Website');
-                        UrlLaunch.launchInBrowser(url: 'https://blog.om-chauhan.co.in/');
+                        UrlLaunch.launchInBrowser(url: 'https://om-chauhan.hashnode.dev/');
                       },
                     )
                   : MobileHeader(drawerKey: drawerKey),
@@ -98,7 +67,7 @@ class _HomeState extends State<Home> {
               const CustomDivider(),
               About(key: aboutKey),
               const CustomDivider(),
-              Project(key: projectKey),
+              Project(key: projectKey, project: project),
               const CustomDivider(),
               Skills(key: skillsKey),
               const CustomDivider(),

@@ -63,16 +63,18 @@ class _HeroCtaState extends State<HeroCta> {
                     ],
                   ),
                 ),
-                Expanded(
+                const Expanded(
                   flex: 6,
-                  child: Container(
+                  child: Align(
                     alignment: Alignment.centerRight,
-                    padding: const EdgeInsets.all(20),
-                    child: const CircleAvatar(
-                      backgroundColor: Colors.black12,
-                      radius: 300,
-                      backgroundImage: AssetImage(
-                        'assets/images/my_pic.jpg',
+                    child: Padding(
+                      padding: EdgeInsets.all(20),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.black12,
+                        radius: 250,
+                        backgroundImage: NetworkImage(
+                          "https://firebasestorage.googleapis.com/v0/b/om-portfolio-github-website.appspot.com/o/profile.jpg?alt=media&token=dfa09671-10cc-4640-845a-b63a9912ee01",
+                        ),
                       ),
                     ),
                   ),
@@ -119,14 +121,15 @@ class _HeroCtaState extends State<HeroCta> {
                     )
                   ],
                 ),
-                Container(
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.all(20),
-                  child: const CircleAvatar(
-                    backgroundColor: Colors.black12,
-                    radius: 150,
-                    backgroundImage: AssetImage(
-                      'assets/images/my_pic.jpg',
+                const Center(
+                  child: Padding(
+                    padding: EdgeInsets.all(20),
+                    child: CircleAvatar(
+                      backgroundColor: Colors.black12,
+                      radius: 100,
+                      backgroundImage: NetworkImage(
+                        "https://firebasestorage.googleapis.com/v0/b/om-portfolio-github-website.appspot.com/o/profile.jpg?alt=media&token=dfa09671-10cc-4640-845a-b63a9912ee01",
+                      ),
                     ),
                   ),
                 )

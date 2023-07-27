@@ -50,20 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyB7gqlyfUnSuoYrOC3hrVuWU8BUC4eunk4',
-    appId: '1:942086847202:web:4ecdc53a0f66783cd1bcbb',
-    messagingSenderId: '942086847202',
-    projectId: 'portfolio---flutter-dev',
-    authDomain: 'portfolio---flutter-dev.firebaseapp.com',
-    storageBucket: 'portfolio---flutter-dev.appspot.com',
-    measurementId: 'G-HBHXY3ZGVY',
+    apiKey: 'AIzaSyCngqsBB5z-XIGP67KhGRN_urnqpqH0o2Y',
+    appId: '1:171816661336:web:a030a8b25b6505255ef52d',
+    messagingSenderId: '171816661336',
+    projectId: 'om-portfolio-github-website',
+    authDomain: 'om-portfolio-github-website.firebaseapp.com',
+    storageBucket: 'om-portfolio-github-website.appspot.com',
+    measurementId: 'G-2DVH06FN9J',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDQ9_Au5SLKbkVy7McvDMLXSFpNIlUedoo',
-    appId: '1:942086847202:android:4c1db626f9319b92d1bcbb',
-    messagingSenderId: '942086847202',
-    projectId: 'portfolio---flutter-dev',
-    storageBucket: 'portfolio---flutter-dev.appspot.com',
+    apiKey: 'AIzaSyCk8ubIyK5z2xROumwzXt-xfU4OaZQWYc4',
+    appId: '1:171816661336:android:5a2dc5a79b799f075ef52d',
+    messagingSenderId: '171816661336',
+    projectId: 'om-portfolio-github-website',
+    storageBucket: 'om-portfolio-github-website.appspot.com',
   );
 }

@@ -59,7 +59,8 @@ class MobileDrawer extends StatelessWidget {
           ListTile(
             onTap: () {
               Navigator.pop(context);
-              UrlLaunch.launchInBrowser(url: 'https://blog.om-chauhan.co.in/');
+              UrlLaunch.launchInBrowser(
+                  url: 'https://om-chauhan.hashnode.dev/');
             },
             title: const TopMenuItem(
               title: 'Blog',

@@ -1,8 +1,10 @@
 import 'package:om_chauhan/all_imports.dart';
 
 class Project extends StatefulWidget {
+  final ProjectController project;
   const Project({
     Key? key,
+    required this.project,
   }) : super(key: key);
 
   @override
@@ -10,7 +12,6 @@ class Project extends StatefulWidget {
 }
 
 class _ProjectState extends State<Project> {
-  final project = ProjectController();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -35,21 +36,24 @@ class _ProjectState extends State<Project> {
             direction: Axis.horizontal,
             runSpacing: 50,
             spacing: 50,
-            children: [
-              for (int i = 0; i < project.projectList.length; i++)
-                ProjectCard(
-                  onTap: () {
-                    if (Responsive.isMobile(context)) {
-                      Navigator.push(
-                          context, MaterialPageRoute(builder: (_) => ProjectDetails(data: project.projectList[i])));
-                    } else {
-                      showDetails(context: context, child: ProjectDetails(data: project.projectList[i]));
-                    }
-                  },
-                  project: project.projectList[i],
-                  top: project.projectList[i].top,
-                )
-            ],
+            children: List.generate(widget.project.projectList.length, (i) {
+              final project = widget.project.projectList[i];
+              return ProjectCard(
+                onTap: () {
+                  if (Responsive.isMobile(context)) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => ProjectDetails(data: project)));
+                  } else {
+                    showDetails(
+                        context: context, child: ProjectDetails(data: project));
+                  }
+                },
+                project: project,
+                top: project.top,
+              );
+            }),
           ),
         ],
       ),
