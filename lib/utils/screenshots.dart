@@ -44,6 +44,13 @@ class Screenshots {
     'https://firebasestorage.googleapis.com/v0/b/portfolio---flutter-dev.appspot.com/o/Super-Store%2Fview-image.jpg?alt=media&token=0544e627-0447-4aaf-ac52-d1056d241377',
   ];
   static List<String> simpleCalculator = [
-    ' https://raw.githubusercontent.com/Flutter-Codes/Simple-Calculator-Flutter/master/Screenshot-simple-calculator-flutter.jpg',
+    'https://raw.githubusercontent.com/Flutter-Codes/Simple-Calculator-Flutter/master/Screenshot-simple-calculator-flutter.jpg',
+  ];
+  static List<String> pixiWalls = [
+    'https://play-lh.googleusercontent.com/0dZ3wq8mbRIWg6kx9xFpEsQ_TVw3IDoaiyyo383rQ7vY_kl29RLhX_YSU1v6DcBRuCI=w2560-h1440-rw',
+    'https://play-lh.googleusercontent.com/As23cVBe1aUBky9l5ihFnscVWMYp9KjnA8AAXi8cAOCmtA64mjD4f5BxCRCpmvTPbWo=w2560-h1440-rw',
+    'https://play-lh.googleusercontent.com/mZsP-6XMej8Wj0FhJWB1AKdN2Km_C3_rU5kdcdz8Apc-4ij6Wh6fVtvpHG-Y-6OT0f8=w2560-h1440-rw',
+    'https://play-lh.googleusercontent.com/g9dJ4bLTG5DWVvfhR2a4wNqX81-z8bD8Ia-voiwL6Vfan1rN1olUm4CaMB5ZfSB35oQ=w2560-h1440-rw',
+    'https://play-lh.googleusercontent.com/mxXtNerXo3_1YhGecqZJSc5Uo9JRKI2E7N12jE8xbb7gdz2771eFZcrwIe5IrGIaXD0=w2560-h1440-rw'
   ];
 }

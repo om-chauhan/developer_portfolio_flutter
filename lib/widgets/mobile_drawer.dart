@@ -22,7 +22,7 @@ class MobileDrawer extends StatelessWidget {
               Scrollable.ensureVisible(
                 about!.currentState!.context,
                 duration: const Duration(seconds: 1),
-              );
+              ).whenComplete(() => Navigator.pop(context));
             },
             title: const TopMenuItem(
               title: 'About Me',
@@ -35,7 +35,7 @@ class MobileDrawer extends StatelessWidget {
               Scrollable.ensureVisible(
                 project!.currentState!.context,
                 duration: const Duration(seconds: 1),
-              );
+              ).whenComplete(() => Navigator.pop(context));
             },
             title: const TopMenuItem(
               title: 'Projects',
@@ -48,7 +48,7 @@ class MobileDrawer extends StatelessWidget {
               Scrollable.ensureVisible(
                 skills!.currentState!.context,
                 duration: const Duration(seconds: 1),
-              );
+              ).whenComplete(() => Navigator.pop(context));
             },
             title: const TopMenuItem(
               title: 'Skills',
@@ -59,8 +59,7 @@ class MobileDrawer extends StatelessWidget {
           ListTile(
             onTap: () {
               Navigator.pop(context);
-              UrlLaunch.launchInBrowser(
-                  url: 'https://om-chauhan.hashnode.dev/');
+              UrlLaunch.launchInBrowser(url: 'https://om-chauhan.hashnode.dev/');
             },
             title: const TopMenuItem(
               title: 'Blog',

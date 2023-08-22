@@ -1,5 +1,4 @@
 import 'package:om_chauhan/all_imports.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 SharedPreferences? sp;
 Future<void> main() async {
@@ -19,8 +18,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      useInheritedMediaQuery: true,
       debugShowCheckedModeBanner: false,
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        dragDevices: {PointerDeviceKind.mouse, PointerDeviceKind.touch, PointerDeviceKind.stylus, PointerDeviceKind.unknown},
+      ),
       title: 'Om Chauhan',
       theme: ThemeData(brightness: Brightness.light, primarySwatch: Colors.blue),
       darkTheme: ThemeData(brightness: Brightness.dark),

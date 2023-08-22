@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-///  https://github.com/abuanwar072/Flutter-Responsive-Admin-Panel-or-Dashboard
+///  https://github.com/abuanwar072/Flutter-Res-Admin-Panel-or-Dashboard
 /// all credits go to abuanwar072
-class Responsive extends StatelessWidget {
+class Res extends StatelessWidget {
   final Widget? mobile;
   final Widget? tablet;
   final Widget? desktop;
 
-  const Responsive({
+  const Res({
     Key? key,
     this.mobile,
     this.tablet,

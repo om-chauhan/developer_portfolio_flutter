@@ -15,11 +15,11 @@ class _HeroCtaState extends State<HeroCta> {
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width,
-      height: Responsive.isDesktop(context) ? 450 : null,
+      height: Res.isDesktop(context) ? 450 : null,
       alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(horizontal: Responsive.isDesktop(context) ? 120 : 20),
+      padding: EdgeInsets.symmetric(horizontal: Res.isDesktop(context) ? 120 : 20),
       // color: kBlackShade,
-      child: Responsive.isDesktop(context)
+      child: Res.isDesktop(context)
           ? Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -53,13 +53,24 @@ class _HeroCtaState extends State<HeroCta> {
                         latterSpacing: 1.5,
                       ),
                       const SizedBox(height: 20.0),
-                      CustomButton(
-                        title: 'Email',
-                        icon: FontAwesomeIcons.envelope,
-                        onTap: () {
-                          UrlLaunch.makeEmail(body: 'Hello, ', email: emailId, subject: 'Hello, I need Assistant');
-                        },
-                      )
+                      Wrap(
+                        spacing: 10,
+                        runSpacing: 10,
+                        children: [
+                          CustomIconButton(
+                            icon: FontAwesomeIcons.envelope,
+                            onTap: () {
+                              UrlLaunch.makeEmail(body: 'Hello, ', email: emailId, subject: 'Hello, I need Assistant');
+                            },
+                          ),
+                          CustomIconButton(
+                            icon: FontAwesomeIcons.twitter,
+                            onTap: () {
+                              UrlLaunch.makeEmail(body: 'Hello, ', email: emailId, subject: 'Hello, I need Assistant');
+                            },
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
@@ -71,7 +82,7 @@ class _HeroCtaState extends State<HeroCta> {
                       padding: EdgeInsets.all(20),
                       child: CircleAvatar(
                         backgroundColor: Colors.black12,
-                        radius: 250,
+                        radius: 150,
                         backgroundImage: NetworkImage(
                           "https://firebasestorage.googleapis.com/v0/b/om-portfolio-github-website.appspot.com/o/profile.jpg?alt=media&token=dfa09671-10cc-4640-845a-b63a9912ee01",
                         ),
@@ -112,13 +123,24 @@ class _HeroCtaState extends State<HeroCta> {
                       latterSpacing: 1.5,
                     ),
                     const SizedBox(height: 20.0),
-                    CustomButton(
-                      title: 'Email',
-                      icon: FontAwesomeIcons.envelope,
-                      onTap: () {
-                        UrlLaunch.makeEmail(body: 'Hello, ', email: emailId, subject: 'Hello, I need Assistant');
-                      },
-                    )
+                    Wrap(
+                      spacing: 10,
+                      runSpacing: 10,
+                      children: [
+                        CustomIconButton(
+                          icon: FontAwesomeIcons.envelope,
+                          onTap: () {
+                            UrlLaunch.makeEmail(body: 'Hello, ', email: emailId, subject: 'Hello, I need Assistant');
+                          },
+                        ),
+                        CustomIconButton(
+                          icon: FontAwesomeIcons.twitter,
+                          onTap: () {
+                            UrlLaunch.makeEmail(body: 'Hello, ', email: emailId, subject: 'Hello, I need Assistant');
+                          },
+                        ),
+                      ],
+                    ),
                   ],
                 ),
                 const Center(
