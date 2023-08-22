@@ -18,8 +18,7 @@ class _FooterState extends State<Footer> {
     return Container(
       width: size.width,
       alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(
-          horizontal: Responsive.isDesktop(context) ? 120 : 20, vertical: Responsive.isDesktop(context) ? 50 : 20),
+      padding: EdgeInsets.symmetric(horizontal: Res.isDesktop(context) ? 120 : 20, vertical: Res.isDesktop(context) ? 50 : 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -60,7 +59,7 @@ class _FooterState extends State<Footer> {
                   UrlLaunch.makeEmail(email: emailId, subject: '', body: '');
                 },
                 icon: const FaIcon(
-                  FontAwesomeIcons.google,
+                  FontAwesomeIcons.envelope,
                   color: Colors.black,
                 ),
               ),

@@ -15,10 +15,10 @@ class _AboutState extends State<About> {
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width,
-      height: Responsive.isDesktop(context) ? 450 : null,
+      height: Res.isDesktop(context) ? 450 : null,
       alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(horizontal: Responsive.isDesktop(context) ? 120 : 20),
-      child: Responsive.isDesktop(context)
+      padding: EdgeInsets.symmetric(horizontal: Res.isDesktop(context) ? 120 : 20),
+      child: Res.isDesktop(context)
           ? Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -56,16 +56,12 @@ class _AboutState extends State<About> {
                         fontSize: 14,
                       ),
                       const SizedBox(height: 50.0),
-                      CustomButton(
-                        title: 'Linkedin',
-                        icon: FontAwesomeIcons.linkedin,
+                      CustomIconButton(
+                        icon: FontAwesomeIcons.linkedinIn,
                         onTap: () {
-                          if (kDebugMode) {
-                            print('Linkedin Button Clicked');
-                          }
                           UrlLaunch.launchInBrowser(url: linkedin);
                         },
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -102,34 +98,12 @@ class _AboutState extends State<About> {
                       fontSize: 14,
                     ),
                     const SizedBox(height: 50.0),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CustomButton(
-                          title: 'Linkedin',
-                          icon: FontAwesomeIcons.linkedin,
-                          onTap: () {
-                            if (kDebugMode) {
-                              print('Linkedin Button Clicked');
-                            }
-
-                            UrlLaunch.launchInBrowser(url: linkedin);
-                          },
-                        ),
-                        // const SizedBox(width: 50.0),
-                        // CustomButton(
-                        //   title: 'Resume',
-                        //   icon: FontAwesomeIcons.download,
-                        //   onTap: () {
-                        //     if (kDebugMode) {
-                        //       print('Resume Button Clicked');
-                        //     }
-
-                        //     UrlLaunch.launchInBrowser(url: github);
-                        //   },
-                        // ),
-                      ],
-                    )
+                    CustomIconButton(
+                      icon: FontAwesomeIcons.linkedinIn,
+                      onTap: () {
+                        UrlLaunch.launchInBrowser(url: linkedin);
+                      },
+                    ),
                   ],
                 ),
                 const SizedBox(height: 20.0),

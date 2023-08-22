@@ -12,7 +12,7 @@ class AppBanners extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
       child: SizedBox(
         height: 80,
-        width: !Responsive.isMobile(context) ? 400 : double.infinity,
+        width: !Res.isMobile(context) ? 400 : double.infinity,
         child: Row(
           children: [
             Expanded(

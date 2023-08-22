@@ -1,17 +1,14 @@
 import 'package:om_chauhan/all_imports.dart';
 
 class Project extends StatefulWidget {
-  final ProjectController project;
-  const Project({
-    Key? key,
-    required this.project,
-  }) : super(key: key);
+  const Project({Key? key}) : super(key: key);
 
   @override
   State<Project> createState() => _ProjectState();
 }
 
 class _ProjectState extends State<Project> {
+  ProjectController project = ProjectController();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -19,8 +16,8 @@ class _ProjectState extends State<Project> {
       width: size.width,
       alignment: Alignment.center,
       padding: EdgeInsets.symmetric(
-        horizontal: Responsive.isDesktop(context) ? 120 : 20,
-        vertical: Responsive.isDesktop(context) ? 50 : 20,
+        horizontal: Res.isDesktop(context) ? 120 : 20,
+        vertical: Res.isDesktop(context) ? 50 : 20,
       ),
       child: Column(
         children: [
@@ -31,30 +28,14 @@ class _ProjectState extends State<Project> {
             fontSize: 30,
           ),
           const SizedBox(height: 30.0),
-          Wrap(
-            alignment: WrapAlignment.spaceBetween,
-            direction: Axis.horizontal,
-            runSpacing: 50,
-            spacing: 50,
-            children: List.generate(widget.project.projectList.length, (i) {
-              final project = widget.project.projectList[i];
-              return ProjectCard(
-                onTap: () {
-                  if (Responsive.isMobile(context)) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => ProjectDetails(data: project)));
-                  } else {
-                    showDetails(
-                        context: context, child: ProjectDetails(data: project));
-                  }
-                },
-                project: project,
-                top: project.top,
-              );
-            }),
-          ),
+          ListView.builder(
+            itemCount: project.projectList.length,
+            shrinkWrap: true,
+            physics: const ScrollPhysics(),
+            itemBuilder: (BuildContext context, int i) {
+              return ProjectCard(project: project.projectList[i]);
+            },
+          )
         ],
       ),
     );

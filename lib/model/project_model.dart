@@ -5,9 +5,10 @@ class ProjectModel {
   final String gitHub;
   final List<String> screenshot;
   final String demo;
-  final bool? top;
+  final bool isLive;
   final String playStore;
   final String miStore;
+  final String appLogo;
 
   ProjectModel({
     required this.title,
@@ -16,8 +17,9 @@ class ProjectModel {
     required this.gitHub,
     required this.screenshot,
     required this.demo,
-    required this.top,
     required this.playStore,
     required this.miStore,
+    required this.appLogo,
+    required this.isLive,
   });
 }

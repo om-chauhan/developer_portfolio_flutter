@@ -26,7 +26,7 @@ class _TopMenuState extends State<TopMenu> {
     return Container(
       width: size.width,
       height: 90,
-      padding: EdgeInsets.symmetric(horizontal: Responsive.isDesktop(context) ? 120 : 20),
+      padding: EdgeInsets.symmetric(horizontal: Res.isDesktop(context) ? 120 : 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

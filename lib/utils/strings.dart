@@ -1,7 +1,8 @@
 const String name = 'Omprakash Chauhan';
 const String role = 'Flutter Developer';
-const String about =
-    "My name is Omprakash, I'm 23 years old, and I live in Mumbai. I am currently studying at a university. I've also been studying a lot on my own to learn new technologies and skills.\n\nI started as a Software Engineering Trainee in 2021. I have been dedicating about 4-5 hrs a day to code. ";
+const String about = '''
+"Hi there! I'm Omprakash Chauhan, and I've been working with Flutter since 2021. I love bringing ideas to life through code and creating apps that look great and work even better. \nIf you're looking for a skilled Flutter Developer to turn your concepts into user-friendly apps, I'm here to help!"
+''';
 //  URL
 const String github = 'https://github.com/om-chauhan';
 const String linkedin = 'https://linkedin.com/in/omprakash-chauhan/';

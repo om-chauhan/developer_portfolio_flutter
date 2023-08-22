@@ -2,7 +2,7 @@
 
 A Flutter Developer Portfolio Website.
 
-- [Insipiration](https://www.behance.net/gallery/124943121/Portfolio?tracking_source=search_projects%7Cportfolio%20designer&)
+- [Inspiration](https://www.behance.net/gallery/124943121/Portfolio?tracking_source=search_projects%7Cportfolio%20designer&)
 
 - [Live Website](https://www.om-chauhan.co.in)
 
@@ -28,9 +28,9 @@ flutter run
 
 ## Screenshot
 
+![Screen 1](/screenshot/Portfolio-1.png) ![Screen 2](/screenshot/Portfolio-2.png)
+![Screen 3](/screenshot/Portfolio-3.png) ![Screen 4](/screenshot/Portfolio-4.png)
 
-| ![Splash Screen](/screenshot/Portfolio-1.png) | ![Login Screen](/screenshot/Portfolio-2.png) | ![Signup Screen](/screenshot/Portfolio-3.png) |
+## License
 
-## Licence
-
-[MIT Licence](https://github.com/om-chauhan/developer_portfolio_flutter/blob/master/LICENSE)
+[MIT License](https://github.com/om-chauhan/developer_portfolio_flutter/blob/master/LICENSE)
