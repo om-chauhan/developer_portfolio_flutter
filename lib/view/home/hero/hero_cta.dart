@@ -81,7 +81,7 @@ class _HeroCtaState extends State<HeroCta> {
                     child: Padding(
                       padding: EdgeInsets.all(20),
                       child: CircleAvatar(
-                        backgroundColor: Colors.black12,
+                        backgroundColor: Colors.white,
                         radius: 150,
                         backgroundImage: NetworkImage(
                           "https://firebasestorage.googleapis.com/v0/b/om-portfolio-github-website.appspot.com/o/profile.jpg?alt=media&token=dfa09671-10cc-4640-845a-b63a9912ee01",
@@ -147,7 +147,7 @@ class _HeroCtaState extends State<HeroCta> {
                   child: Padding(
                     padding: EdgeInsets.all(20),
                     child: CircleAvatar(
-                      backgroundColor: Colors.black12,
+                      backgroundColor: Colors.white,
                       radius: 100,
                       backgroundImage: NetworkImage(
                         "https://firebasestorage.googleapis.com/v0/b/om-portfolio-github-website.appspot.com/o/profile.jpg?alt=media&token=dfa09671-10cc-4640-845a-b63a9912ee01",
