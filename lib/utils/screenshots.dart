@@ -53,4 +53,14 @@ class Screenshots {
     'https://play-lh.googleusercontent.com/g9dJ4bLTG5DWVvfhR2a4wNqX81-z8bD8Ia-voiwL6Vfan1rN1olUm4CaMB5ZfSB35oQ=w2560-h1440-rw',
     'https://play-lh.googleusercontent.com/mxXtNerXo3_1YhGecqZJSc5Uo9JRKI2E7N12jE8xbb7gdz2771eFZcrwIe5IrGIaXD0=w2560-h1440-rw'
   ];
+
+  static List<String> imageSlider = [
+    'https://raw.githubusercontent.com/Flutter-Codes/Image-Slider-Indicator-Flutter/master/screenshot/slider-1.jpg',
+    'https://raw.githubusercontent.com/Flutter-Codes/Image-Slider-Indicator-Flutter/master/screenshot/slider-2.jpg',
+    'https://raw.githubusercontent.com/Flutter-Codes/Image-Slider-Indicator-Flutter/master/screenshot/slider-3.jpg'
+  ];
+  static List<String> flatBanner = [
+    'https://raw.githubusercontent.com/om-chauhan/flat_banners/master/horizontal-vertical-view.jpg',
+    'https://raw.githubusercontent.com/om-chauhan/flat_banners/master/vertical-view.jpg'
+  ];
 }

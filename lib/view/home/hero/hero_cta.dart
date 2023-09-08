@@ -74,17 +74,23 @@ class _HeroCtaState extends State<HeroCta> {
                     ],
                   ),
                 ),
-                const Expanded(
+                Expanded(
                   flex: 6,
                   child: Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
-                      padding: EdgeInsets.all(20),
-                      child: CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 150,
-                        backgroundImage: NetworkImage(
-                          "https://firebasestorage.googleapis.com/v0/b/om-portfolio-github-website.appspot.com/o/profile.jpg?alt=media&token=dfa09671-10cc-4640-845a-b63a9912ee01",
+                      padding: const EdgeInsets.all(20),
+                      child: SizedBox(
+                        height: 300,
+                        width: 300,
+                        child: ClipOval(
+                          child: CachedNetworkImage(
+                              imageUrl:
+                                  'https://firebasestorage.googleapis.com/v0/b/om-portfolio-github-website.appspot.com/o/IMG_20190204_153830_688.jpg?alt=media&token=7087d3b8-b766-4544-b97e-c4cb2cb5cd31',
+                              fit: BoxFit.cover,
+                              progressIndicatorBuilder: (context, url, progress) => Center(
+                                    child: CircularProgressIndicator(value: progress.progress),
+                                  )),
                         ),
                       ),
                     ),
@@ -143,14 +149,20 @@ class _HeroCtaState extends State<HeroCta> {
                     ),
                   ],
                 ),
-                const Center(
+                Center(
                   child: Padding(
-                    padding: EdgeInsets.all(20),
-                    child: CircleAvatar(
-                      backgroundColor: Colors.white,
-                      radius: 100,
-                      backgroundImage: NetworkImage(
-                        "https://firebasestorage.googleapis.com/v0/b/om-portfolio-github-website.appspot.com/o/profile.jpg?alt=media&token=dfa09671-10cc-4640-845a-b63a9912ee01",
+                    padding: const EdgeInsets.all(20),
+                    child: SizedBox(
+                      height: 160,
+                      width: 160,
+                      child: ClipOval(
+                        child: CachedNetworkImage(
+                            imageUrl:
+                                'https://firebasestorage.googleapis.com/v0/b/om-portfolio-github-website.appspot.com/o/IMG_20190204_153830_688.jpg?alt=media&token=7087d3b8-b766-4544-b97e-c4cb2cb5cd31',
+                            fit: BoxFit.cover,
+                            progressIndicatorBuilder: (context, url, progress) => Center(
+                                  child: CircularProgressIndicator(value: progress.progress),
+                                )),
                       ),
                     ),
                   ),

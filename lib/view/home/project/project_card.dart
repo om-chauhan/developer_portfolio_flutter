@@ -37,32 +37,55 @@ class _ProjectCardState extends State<ProjectCard> {
         children: [
           Wrap(
             spacing: 50,
-
-            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(Res.isMobile(context) ? 10 : 50),
-                child: CachedNetworkImage(
-                  imageUrl: widget.project!.appLogo,
-                  fit: BoxFit.cover,
-                  height: Res.isMobile(context) ? 100 : 230,
-                  width: Res.isMobile(context) ? 100 : 230,
-                  progressIndicatorBuilder: (context, url, downloadProgress) =>
-                      Center(child: CircularProgressIndicator(value: downloadProgress.progress)),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
+              Card(
+                margin: EdgeInsets.zero,
+                color: Colors.white,
+                elevation: 3,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Res.isMobile(context) ? 20 : 40)),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(Res.isMobile(context) ? 20 : 40),
+                  child: CachedNetworkImage(
+                    imageUrl: widget.project!.appLogo,
+                    fit: BoxFit.cover,
+                    height: Res.isMobile(context) ? 100 : 150,
+                    width: Res.isMobile(context) ? 100 : 150,
+                    progressIndicatorBuilder: (context, url, downloadProgress) =>
+                        Center(child: CircularProgressIndicator(value: downloadProgress.progress)),
+                    errorWidget: (context, url, error) => const Icon(Icons.error),
+                  ),
                 ),
               ),
-              const SizedBox(width: 20.0),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextBuilder(
-                      text: widget.project!.title,
-                      color: kBlack,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
+                    Wrap(
+                      spacing: 10,
+                      runSpacing: 10,
+                      children: [
+                        TextBuilder(
+                          text: widget.project!.title,
+                          color: kBlack,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w700,
+                        ),
+                        if (widget.project!.projectType != null && widget.project!.projectType!.isNotEmpty)
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                            decoration: BoxDecoration(
+                              color: Colors.pink,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: TextBuilder(
+                              text: widget.project!.projectType,
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          )
+                      ],
                     ),
                     const SizedBox(height: 10.0),
                     TextBuilder(
@@ -84,7 +107,7 @@ class _ProjectCardState extends State<ProjectCard> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                    const SizedBox(height: 10.0),
+                    const SizedBox(height: 10),
                     Wrap(
                       spacing: 10,
                       runSpacing: 10,
@@ -126,6 +149,41 @@ class _ProjectCardState extends State<ProjectCard> {
                           ),
                       ],
                     ),
+                    if (widget.project!.downloads != null && widget.project!.downloads!.isNotEmpty) const SizedBox(height: 15),
+                    if (widget.project!.downloads != null && widget.project!.downloads!.isNotEmpty)
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Icon(Icons.download, color: Colors.blue, size: 20),
+                          const SizedBox(width: 5),
+                          TextBuilder(
+                            text: widget.project!.downloads.toString(),
+                            color: Colors.black.withOpacity(0.6),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ],
+                      ),
+                    // if (widget.project!.tags != null && widget.project!.tags!.isNotEmpty) const SizedBox(height: 15),
+                    // if (widget.project!.tags != null && widget.project!.tags!.isNotEmpty)
+                    //   Wrap(
+                    //     spacing: 5,
+                    //     runSpacing: 5,
+                    //     children: [
+                    //       for (int i = 0; i < widget.project!.tags!.length; i++)
+                    //         Chip(
+                    //           backgroundColor: Colors.black,
+                    //           elevation: 1,
+                    //           padding: const EdgeInsets.all(4),
+                    //           label: TextBuilder(
+                    //             text: widget.project!.tags![i],
+                    //             color: Colors.white,
+                    //             fontSize: 16,
+                    //             fontWeight: FontWeight.w400,
+                    //           ),
+                    //         ),
+                    //     ],
+                    //   )
                   ],
                 ),
               ),
@@ -181,7 +239,7 @@ class _ProjectCardState extends State<ProjectCard> {
                           },
                         ),
                       ),
-                      if (widget.project!.screenshot.length > 1 && !Res.isMobile(context))
+                      if (Res.isDesktop(context) && widget.project!.screenshot.length > 5)
                         Positioned(
                           left: 0,
                           child: InkWell(
@@ -205,7 +263,7 @@ class _ProjectCardState extends State<ProjectCard> {
                             ),
                           ),
                         ),
-                      if (widget.project!.screenshot.length > 1 && !Res.isMobile(context))
+                      if (Res.isDesktop(context) && widget.project!.screenshot.length > 5)
                         Positioned(
                           right: 0,
                           child: InkWell(
@@ -238,20 +296,20 @@ class _ProjectCardState extends State<ProjectCard> {
                 ),
                 const SizedBox(height: 30),
                 Center(
-                  child: Column(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(
-                          width: Res.isMobile(context) ? 150 : 200, child: Divider(color: Colors.black.withOpacity(0.6), thickness: 0.5, height: 1)),
-                      const SizedBox(height: 8),
+                      SizedBox(width: 30, child: Divider(color: Colors.black.withOpacity(0.6), thickness: 0.5, height: 1)),
+                      const SizedBox(width: 8),
                       const TextBuilder(
                         text: 'END',
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
                       ),
-                      const SizedBox(height: 8),
-                      SizedBox(
-                          width: Res.isMobile(context) ? 100 : 200, child: Divider(color: Colors.black.withOpacity(0.6), thickness: 0.5, height: 1)),
+                      const SizedBox(width: 8),
+                      SizedBox(width: 30, child: Divider(color: Colors.black.withOpacity(0.6), thickness: 0.5, height: 1)),
                     ],
                   ),
                 ),

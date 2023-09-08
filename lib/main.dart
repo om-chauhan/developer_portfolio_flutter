@@ -7,6 +7,9 @@ Future<void> main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   sp = await SharedPreferences.getInstance();
 
+  /// [Firebase Crashlytics]
+  FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+  analytics.setAnalyticsCollectionEnabled(true);
   runApp(
     const MyApp(),
   );
