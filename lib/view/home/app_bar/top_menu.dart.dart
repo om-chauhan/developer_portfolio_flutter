@@ -32,54 +32,18 @@ class _TopMenuState extends State<TopMenu> {
         children: [
           GestureDetector(
             onTap: widget.home,
-            child: Row(
-              children: [
-                Image.asset(
-                  'assets/icons/logo.png',
-                  height: 40,
-                  width: 40,
-                ),
-                const SizedBox(width: 10.0),
-                TextBuilder(
-                  text: 'Om Portfolio',
-                  fontSize: 26,
-                  textAlign: TextAlign.left,
-                  fontWeight: FontWeight.w600,
-                  color: kBlack,
-                ),
-              ],
+            child: Image.asset(
+              'assets/icons/logo.png',
+              height: 40,
+              width: 40,
             ),
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              TopMenuItem(
-                title: 'About Me',
-                onTap: widget.about,
-              ),
-              TopMenuItem(
-                title: 'Projects',
-                onTap: widget.project,
-              ),
-              TopMenuItem(
-                title: 'Skills',
-                onTap: widget.skills,
-              ),
-              TopMenuItem(
-                title: 'Blog',
-                onTap: widget.blog,
-              ),
-              const SizedBox(width: 10.0),
-              InkWell(
-                onTap: () {
-                  UrlLaunch.launchInBrowser(url: apkDownloadLink);
-                },
-                child: const FaIcon(
-                  FontAwesomeIcons.android,
-                  size: 30,
-                  color: Color(0xff1C8302),
-                ),
-              )
+              TopMenuItem(title: 'About Me', onTap: widget.about),
+              TopMenuItem(title: 'Projects', onTap: widget.project),
+              TopMenuItem(title: 'Skills', onTap: widget.skills),
+              TopMenuItem(title: 'Blog', onTap: widget.blog),
             ],
           )
         ],

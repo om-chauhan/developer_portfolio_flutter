@@ -1,0 +1,1 @@
+enum ScreenshotType { mobile, web }

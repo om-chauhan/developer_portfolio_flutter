@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TextBuilder extends StatelessWidget {
   final String? text;
@@ -31,7 +32,7 @@ class TextBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text!,
-      style: TextStyle(
+      style: GoogleFonts.dmSans(
         fontSize: fontSize,
         color: color,
         fontWeight: fontWeight,

@@ -12,4 +12,4 @@ const String miStoreIcon = 'assets/images/getApps_badge.png';
 const String googlePlayIcon = 'assets/images/google-play-badge.png';
 const String websiteIcon = 'assets/images/website.png';
 const String githubIcon = 'assets/images/github.png';
-const String apkDownloadLink = 'https://www.om-chauhan.co.in/demo/app-release.apk';
+// const String apkDownloadLink = 'https://www.om-chauhan.co.in/demo/app-release.apk';
