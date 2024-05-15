@@ -4,8 +4,6 @@ A Flutter Developer Portfolio Website.
 
 - [Inspiration](https://www.behance.net/gallery/124943121/Portfolio?tracking_source=search_projects%7Cportfolio%20designer&)
 
-- [Live Website](https://www.om-chauhan.co.in)
-
 ## Getting Started
 
 #### 1. Copy or Download code in your system
